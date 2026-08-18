@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Enterprise AI Business Assistant — Case Study | [Your Name]</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="nav-logo">[Your Name]<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb"><a href="../index.html">Work</a> / Enterprise AI Business Assistant</div>
+
+<header class="wrap case-hero">
+  <span class="eyebrow"><span class="dot"></span> AI / Business Assistant</span>
+  <h1>Enterprise AI Business Assistant</h1>
+  <p class="tagline">A natural-language business assistant that only answers from executed SQL query results against a real (synthetic) database — never from model recall.</p>
+  <div class="case-meta">
+    <span class="chip">Ollama</span><span class="chip">Vanna</span><span class="chip">SQLite</span>
+  </div>
+  <div class="case-actions">
+    <a class="btn btn-primary" href="https://github.com/Zuhair-01/enterprise-ai-assistant" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</header>
+
+<section class="wrap case-section" style="border-top:none">
+  <h2><span class="num">01</span>Problem</h2>
+  <p>Business users want plain-language answers ("what were total expenses last month?") without writing SQL — but a general-purpose chatbot layered over company data risks answering confidently from the model's training data instead of the company's actual numbers.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">02</span>Why it matters</h2>
+  <p>A wrong number stated confidently is worse than no answer. If a chatbot will answer a general-knowledge question once from memory, a user has no way to know when it's answering from real data versus guessing.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">03</span>Solution</h2>
+  <p>An agent with exactly one capability: run SQL against a synthetic company database. A system prompt enforces that every factual answer must come from an executed query, cites the source table, and returns a fixed, verifiable refusal message when a question falls outside the schema.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">04</span>Architecture</h2>
+  <pre class="code-block">User question
+  -> Agent + BusinessAssistantSystemPromptBuilder
+       - enforces: answer ONLY from SQL results
+       - enforces: exact fallback message for out-of-schema questions
+       - enforces: cite source table(s) in every answer
+  -> llama3.1:8b (local) decides whether/what SQL to run
+  -> RunSqlTool -> SqliteRunner -> company.db (8 synthetic tables)
+  -> real query result -> model states the answer + source table(s)</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">05</span>Demo</h2>
+  <p>Real output from a live run against local Ollama:</p>
+  <pre class="code-block">Q: How many contracts expire within 90 days?
+A: The number of contracts that expire within 90 days is 4. (contracts)
+
+Q: What is the capital of France?
+A: I don't have enough information in the connected dataset to answer that.</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">06</span>Technical decisions</h2>
+  <div class="case-two-col">
+    <div>
+      <p><strong style="color:var(--text)">SQL generation as the hallucination guard.</strong> Not a prompt suggestion layered on a free-form chatbot — the agent structurally cannot answer a factual question without first producing an inspectable query.</p>
+    </div>
+    <div>
+      <p><strong style="color:var(--text)">Built on an archived library, kept alive.</strong> The upstream framework (vanna-ai/vanna) was archived by its maintainer in March 2026; this project vendors it and continues building on it independently rather than treating "archived" as a dead end.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">07</span>Security</h2>
+  <p>No API keys — the LLM runs entirely locally via Ollama. The agent's only tool is read-only SQL execution; there is no write/delete capability exposed.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">08</span>Limitations</h2>
+  <ul>
+    <li>Two real bugs were found and fixed during testing (documented, not hidden): a tool-iteration-limit loop on date math, and a real accuracy bug — 27 vs. the correct 4 — from a missing date lower-bound filter, caught by comparing against an independently-run ground-truth query.</li>
+    <li>Single-user demo — no real per-user authentication.</li>
+  </ul>
+  <div class="callout"><strong>Why this matters more than it sounds:</strong> a local 8B model getting date-range logic wrong on the first pass is a real, useful data point about local-LLM reliability, not something to quietly patch and forget.</div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">09</span>Future improvements</h2>
+  <ul>
+    <li>Add a real per-user auth resolver for a multi-user deployment.</li>
+    <li>Benchmark against a larger local model to compare date-logic accuracy.</li>
+    <li>Persist conversation history across runs.</li>
+  </ul>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 [Your Name].</p>
+    <ul class="foot-links">
+      <li><a href="../index.html#work">All Projects</a></li>
+      <li><a href="https://github.com/Zuhair-01/enterprise-ai-assistant" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

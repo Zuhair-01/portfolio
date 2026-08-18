@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Open Axis — Case Study | [Your Name]</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="nav-logo">[Your Name]<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb"><a href="../index.html">Work</a> / Open Axis</div>
+
+<header class="wrap case-hero">
+  <span class="eyebrow"><span class="dot"></span> AI Orchestration</span>
+  <h1>Open Axis</h1>
+  <p class="tagline">A local control plane that routes engineering tasks across Claude Code, OpenCode, and Codex — capability-tier routing, deterministic fallback, durable task state. A real tool used daily, not a demo built for this portfolio.</p>
+  <div class="case-meta">
+    <span class="chip">Python</span><span class="chip">SQLite</span><span class="chip">JSON Schema</span><span class="chip">45/45 tests</span>
+  </div>
+  <div class="case-actions">
+    <a class="btn btn-primary" href="https://github.com/Zuhair-01/open-axis" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</header>
+
+<section class="wrap case-section" style="border-top:none">
+  <h2><span class="num">01</span>Problem</h2>
+  <p>AI-assisted development means juggling several CLIs (Claude Code, OpenCode, Codex), each with its own agents, skills, and models. Left manual, every task means re-deciding which tool to use, which model fits, what happens if a provider fails mid-task, and how not to lose progress on interruption.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">02</span>Why it matters</h2>
+  <p>Without a routing policy, tasks get sent to the wrong model for their difficulty (wasting cost on easy tasks, or worse, under-powering hard ones), failures aren't retried consistently, and there's no shared record of what's actually installed across environments.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">03</span>Solution</h2>
+  <p>A Python control plane that classifies a task, selects skills/agent/model against real capability tiers, dispatches to whichever CLI backs that model, falls back deterministically on failure, and persists task state to SQLite so nothing is lost on interruption.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">04</span>Architecture</h2>
+  <pre class="code-block">TASK
+  -> CLARITY GATE     (local, deterministic, skips triage for obvious tasks)
+  -> TRIAGE           (cheap-model classification for ambiguous tasks)
+  -> SKILL SELECTOR   (ranks 3-10 relevant skills from a 3,812-skill registry)
+  -> AGENT SELECTOR    (301 agents, 164 live + 137 offline)
+  -> MODEL SELECTOR     (enforces capability-tier floor, never silently downgrades)
+  -> DISPATCH             (real CLI call: claude -p / codex exec / opencode run)
+  -> FALLBACK               (classify error, retry next candidate, state preserved)
+  -> TASK STATE               (SQLite, durable across restarts)
+  -> USAGE LOG                  (real latency, routing decisions, fallback events)</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">05</span>Demo</h2>
+  <pre class="code-block">$ uv run python orchestrator/repl.py
+> fix the bug in src/auth.ts line 42
+[clarity gate] clear=True — triage skipped
+[skill selector] -> debugging-strategies, typescript-expert, error-handling
+[model selector] -> tier B floor -> kimi-k2.7-code (opencode-go)
+[dispatch] opencode run -m kimi-k2.7-code ...
+[usage] logged: latency=4.8s, provider=opencode-go, fallback_used=false</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">06</span>Technical decisions</h2>
+  <div class="case-two-col">
+    <div>
+      <p><strong style="color:var(--text)">No subagent spawning.</strong> A deliberate choice: all agent invocation is inline rather than spawned, to avoid the token overhead of cold-start subagents.</p>
+      <p><strong style="color:var(--text)">Two-stage triage.</strong> A free, local, deterministic "clarity gate" skips the cheap-model classification call for obviously unambiguous tasks, with an asymmetric-cost design — a false "clear" is dangerous, so every rule is deliberately narrow.</p>
+    </div>
+    <div>
+      <p><strong style="color:var(--text)">Real, benchmarked routing.</strong> Models aren't tier-rated by assumption — 9 of 26 available models were benchmarked against real tasks and judged from actual output; two real failures were found this way and correctly excluded from routing.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">07</span>Security</h2>
+  <p>Untrusted-by-default trust boundary for web pages, downloaded documents, and skill files. Secret scanning reports only FOUND/MISSING/INVALID/UNVERIFIED, never values. Destructive operations (uninstalls, force push, mass deletion) are ASK/DENY by default, not ALLOW.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">08</span>Limitations</h2>
+  <ul>
+    <li>Only 2 of 3 provider legs are authenticated end-to-end today.</li>
+    <li>17 of 26 available models are still unbenchmarked and correctly excluded from routing rather than guessed into a tier.</li>
+    <li>Token/cost figures in the usage log are currently null — the underlying CLI doesn't expose them yet.</li>
+  </ul>
+  <div class="callout"><strong>Verified, not claimed:</strong> 45/45 tests passing, confirmed from a clean <code>uv sync</code> before this case study was written.</div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">09</span>Future improvements</h2>
+  <ul>
+    <li>Finish Codex/GPT provider authentication and benchmark its models into the tier system.</li>
+    <li>Extend real cost tracking once a provider CLI exposes it.</li>
+    <li>Expand benchmark coverage past the current 9/26 models.</li>
+  </ul>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 [Your Name].</p>
+    <ul class="foot-links">
+      <li><a href="../index.html#work">All Projects</a></li>
+      <li><a href="https://github.com/Zuhair-01/open-axis" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

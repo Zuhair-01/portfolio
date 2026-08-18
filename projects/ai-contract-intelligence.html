@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Contract Intelligence — Case Study | [Your Name]</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="nav-logo">[Your Name]<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb"><a href="../index.html">Work</a> / AI Contract Intelligence</div>
+
+<header class="wrap case-hero">
+  <span class="eyebrow"><span class="dot"></span> AI / Document Intelligence</span>
+  <h1>AI Contract Intelligence</h1>
+  <p class="tagline">Local, Ollama-powered contract extraction, risk flagging, and natural-language search over PDF contracts. No paid API keys, no data leaves the machine.</p>
+  <div class="case-meta">
+    <span class="chip">Ollama</span><span class="chip">FastAPI</span><span class="chip">Streamlit</span><span class="chip">ChromaDB</span>
+  </div>
+  <div class="case-actions">
+    <a class="btn btn-primary" href="https://github.com/Zuhair-01/ai-contract-intelligence" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</header>
+
+<section class="wrap case-section" style="border-top:none">
+  <h2><span class="num">01</span>Problem</h2>
+  <p>Reviewing a stack of contracts by hand to answer "which of these expire in 90 days" or "which have automatic renewal" is slow, and it's easy to miss a renewal deadline buried in page 12 of a PDF.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">02</span>Why it matters</h2>
+  <p>Contract review errors are expensive — a missed auto-renewal clause or an unflagged high-value contract can cost real money. A tool that reports what it couldn't find, instead of guessing, is more useful than one that always sounds confident.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">03</span>Solution</h2>
+  <p>A local LLM extracts a fixed schema of contract fields from each PDF (never inferring beyond what the text states), deterministic rules flag real risk patterns, and natural-language search answers questions across the whole set with source citations.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">04</span>Architecture</h2>
+  <pre class="code-block">PDF upload -> pdfplumber (text extraction, no OCR/poppler dependency)
+   +--> RAG path: chunk -> nomic-embed-text embeddings -> Chroma vector store
+   |       -> MultiQueryRetriever + llama3.1:8b -> answer + source citations
+   +--> Extraction path: full text -> structured-JSON prompt -> llama3.1:8b
+             -> extracted_facts (explicit-text-only) + missing_fields
+             -> flag_contract_risks()  (deterministic: auto-renewal, high value)
+             -> generate_summary()      (plain-language, from extracted_facts ONLY)</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">05</span>Demo</h2>
+  <p>Tested on a deliberately incomplete ("sparse") synthetic contract, the extractor honestly reports what it couldn't find rather than inventing values:</p>
+  <pre class="code-block">{
+  "contract_number": "NL-2024-1003",
+  "contract_value": null,
+  "start_date": null,
+  "missing_fields": ["contract_value", "start_date", "end_date",
+                      "renewal_terms", "payment_terms", "responsible_department"]
+}
+risk flags: ["6 field(s) could not be extracted... Human review required."]</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">06</span>Technical decisions</h2>
+  <div class="case-two-col">
+    <div>
+      <p><strong style="color:var(--text)">Facts vs. summary, structurally separate.</strong> The extraction prompt only returns explicit-text facts; the summary is generated strictly from those already-extracted facts, never from the raw document — bounding what the summary can claim.</p>
+    </div>
+    <div>
+      <p><strong style="color:var(--text)">pdfplumber over OCR pipelines.</strong> Pure-Python text extraction avoids a poppler system dependency (and a real licensing wrinkle found in the upstream base project's own issue tracker) at the cost of not handling scanned image-only PDFs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">07</span>Security</h2>
+  <p>Every extraction response carries a fixed AI-safety notice: facts are extracted from explicit text, the summary is model-generated, verify before making business or legal decisions — not legal advice. 100% local, no data sent to a third party.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">08</span>Limitations</h2>
+  <ul>
+    <li>Extraction accuracy depends on the local model; a larger model would likely extract more reliably from incomplete contracts.</li>
+    <li>No OCR — scanned image-only PDFs return "no extractable text."</li>
+    <li>Risk flagging is a small, illustrative rule set, not a comprehensive contract-risk taxonomy.</li>
+  </ul>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">09</span>Future improvements</h2>
+  <ul>
+    <li>Add OCR fallback for scanned PDFs.</li>
+    <li>Expand the deterministic risk-flag rule set (indemnification clauses, liability caps).</li>
+    <li>Add a dedicated "contracts expiring in N days" filtered view.</li>
+  </ul>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 [Your Name].</p>
+    <ul class="foot-links">
+      <li><a href="../index.html#work">All Projects</a></li>
+      <li><a href="https://github.com/Zuhair-01/ai-contract-intelligence" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

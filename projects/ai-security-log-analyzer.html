@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Security Log Analyzer — Case Study | [Your Name]</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="nav-logo">[Your Name]<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb"><a href="../index.html">Work</a> / AI Security Log Analyzer</div>
+
+<header class="wrap case-hero">
+  <span class="eyebrow"><span class="dot"></span> Cybersecurity</span>
+  <h1>AI Security Log Analyzer</h1>
+  <p class="tagline">A deterministic security detection engine (brute force, impossible travel, port scan, request flood) over synthetic logs, with local-LLM incident summaries and a real-time dashboard.</p>
+  <div class="case-meta">
+    <span class="chip">Next.js</span><span class="chip">Python</span><span class="chip">Ollama</span><span class="chip">12/12 tests</span>
+  </div>
+  <div class="case-actions">
+    <a class="btn btn-primary" href="https://github.com/Zuhair-01/ai-security-log-analyzer" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</header>
+
+<section class="wrap case-section" style="border-top:none">
+  <h2><span class="num">01</span>Problem</h2>
+  <p>A SOC analyst reviewing raw logs by hand can't keep up with volume, and a black-box ML anomaly score doesn't explain why something was flagged.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">02</span>Why it matters</h2>
+  <p>Security teams need to spot brute-force attempts, impossible-travel logins, and port scans quickly, with a reason an analyst can actually verify — not just a score.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">03</span>Solution</h2>
+  <p>Seven deterministic, threshold-based detection rules, each producing an incident with a human-readable reason and the exact evidence that triggered it, plus an optional local-LLM layer that turns any incident into a plain-language summary without overstating what the evidence shows.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">04</span>Architecture</h2>
+  <pre class="code-block">data/raw/*.csv (authentication, firewall, web_access, endpoint, ip_reputation)
+  -> pipeline/run_detection.py
+       brute_force, post_brute_force_success, unusual_login_time,
+       impossible_travel, known_bad_ip, request_flood, port_scan
+  -> data/processed/security_dataset.json (KPIs + full incident list)
+       +--> Next.js dashboard (Security Overview page)
+       +--> pipeline/ai_incident_summary.py -> llama3.1:8b
+             plain-language summary, hedged unless confirmed-compromise</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">05</span>Demo</h2>
+  <p>Verified live: the AI summary correctly distinguishes a confirmed compromise from a merely-suspicious pattern.</p>
+  <pre class="code-block">[Critical] post_brute_force_success
+AI summary: "...a brute-force attack was successful, allowing unauthorized
+access to the account 'karim.khoury'. Treat this as a likely account
+compromise, rotate the credentials immediately..."
+
+[Medium] unusual_login_time
+AI summary: "...this pattern may warrant investigation as it could
+indicate unauthorized access. Verify with the account owner..."</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">06</span>Technical decisions</h2>
+  <div class="case-two-col">
+    <div>
+      <p><strong style="color:var(--text)">Rule-based over ML.</strong> Every flagged incident has a traceable, explainable reason a SOC analyst could verify by hand — the same principle used in the Contract Intelligence and AI Assistant projects: keep deterministic logic separate from anything generated.</p>
+    </div>
+    <div>
+      <p><strong style="color:var(--text)">A heavy OSS base was abandoned mid-way, deliberately.</strong> The first candidate (a mature, ML-heavy log analyzer) was too tightly coupled to Postgres/Kafka/gRPC to safely strip down — rather than fight it, the base was swapped for a lighter, provably working foundation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">07</span>Security</h2>
+  <p>All log data is synthetic; suspicious-looking IPs are drawn from RFC 5737 reserved documentation ranges, never real infrastructure. AI summaries never claim an attack succeeded unless the incident type is an explicit confirmed-compromise type.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">08</span>Limitations</h2>
+  <ul>
+    <li>Detection thresholds are illustrative, not tuned for a real organization's traffic patterns.</li>
+    <li>Rule-based, not ML-based — will miss novel attack patterns that don't match one of the 7 rules.</li>
+  </ul>
+  <div class="callout"><strong>A real bug, found and fixed:</strong> the first version of the synthetic log generator produced 315 spurious "impossible travel" incidents from randomly-assigned login countries. Fixed by giving synthetic users a consistent home country — down to exactly 10 incidents, matching the deliberately injected patterns with zero noise.</div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">09</span>Future improvements</h2>
+  <ul>
+    <li>Add a statistical/ML anomaly layer alongside the rule-based engine.</li>
+    <li>Per-user expected-schedule modeling to reduce false positives for shift workers.</li>
+  </ul>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 [Your Name].</p>
+    <ul class="foot-links">
+      <li><a href="../index.html#work">All Projects</a></li>
+      <li><a href="https://github.com/Zuhair-01/ai-security-log-analyzer" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

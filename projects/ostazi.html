@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ostazi — Case Study | [Your Name]</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="nav-logo">[Your Name]<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb"><a href="../index.html">Work</a> / Ostazi</div>
+
+<header class="wrap case-hero">
+  <span class="bonus-badge" style="margin-bottom:16px;display:inline-block">BONUS — LIVE PRODUCTION, NOT A DEMO</span>
+  <h1>Ostazi (ostazi.sy)</h1>
+  <p class="tagline">A real, deployed two-sided tutoring marketplace for Syria: students and parents book verified private tutors on a cash-first commission model. Built solo, end to end.</p>
+  <div class="case-meta">
+    <span class="chip">Next.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span><span class="chip">Capacitor</span>
+  </div>
+  <div class="callout" style="margin-top:8px">
+    Unlike the other five projects, Ostazi's source is kept in a private repository — it handles real bookings and real commission accounting. This page is a case study, demonstrated live rather than published as open source.
+  </div>
+</header>
+
+<section class="wrap case-section" style="border-top:none">
+  <h2><span class="num">01</span>Problem</h2>
+  <p>Finding a qualified private tutor in Syria happens informally, through word of mouth — no verification, no scheduling system, and no accountability if a tutor cancels last-minute or a payment dispute comes up.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">02</span>Why it matters</h2>
+  <p>Education access in Syria depends heavily on private tutoring, but there was no trusted, structured way to find and book one. A cash-first model was a deliberate choice for a market where digital payment rails are limited.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">03</span>Solution</h2>
+  <p>A full marketplace: phone/OTP authentication (no passwords), an admin-driven teacher verification workflow, a real booking state machine with cancellation rules and no-show accountability for both sides, and a versioned commission ledger that survives rate changes without corrupting historical bookings.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">04</span>Architecture</h2>
+  <pre class="code-block">Next.js (Arabic RTL + English, next-intl)
+  -> Express/Node API
+       - phone + OTP auth (no passwords)
+       - teacher verification (PENDING -> VERIFIED/REJECTED/SUSPENDED)
+       - booking state machine (REQUESTED -> CONFIRMED -> COMPLETED,
+         or CANCELLED/NO_SHOW with actor tracking both sides)
+       - commission engine: versioned + snapshotted per booking,
+         append-only ledger, teacher risk-tier escalation
+       - review/rating system with a flag-and-moderate pipeline
+  -> PostgreSQL (Prisma) on Supabase
+  -> Deployed on Vercel; Capacitor wraps the same app for Android/iOS</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">05</span>Technical decisions</h2>
+  <div class="case-two-col">
+    <div>
+      <p><strong style="color:var(--text)">Commission is versioned, never mutated.</strong> The rate is snapshotted per booking, so a later rate change never silently rewrites historical bookings — the ledger itself is append-only, not a mutable balance field.</p>
+    </div>
+    <div>
+      <p><strong style="color:var(--text)">Risk-tier escalation actually blocks bookings.</strong> A teacher's outstanding debt escalates them through NORMAL to WARNING to RESTRICTED to BLOCKED, and BLOCKED genuinely prevents new bookings — not just a dashboard label.</p>
+    </div>
+  </div>
+  <p>A real gap was found and fixed during development: originally only teachers could report a student no-show, leaving no way for a student to report that a <em>teacher</em> simply didn't show up. Fixed with a symmetric reporting path for both sides.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">06</span>Security</h2>
+  <p>No passwords anywhere — phone + OTP only. Admin accounts cannot be created through public registration, only via a CLI script. A P0 issue (a debug flag that could have exposed OTP codes outside development) was found and fixed via the hosting platform's API, verified in production, and documented internally rather than silently patched. Legal documents (Terms of Service, Privacy Policy, Cancellation/Refund Policy, Commission Policy) exist in draft form, explicitly marked as not yet reviewed by legal counsel.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">07</span>Limitations</h2>
+  <ul>
+    <li>Chat, in-app notifications, and a real SMS gateway aren't built yet (OTP is currently echoed directly for dev/preview testing, not sent via SMS).</li>
+    <li>ShamCash (a common local payment method) has an architecture placeholder but is disabled pending integration.</li>
+    <li>Native app store publishing hasn't happened yet — the Capacitor mobile shell exists but isn't distributed.</li>
+  </ul>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">08</span>Future improvements</h2>
+  <ul>
+    <li>Real SMS OTP delivery.</li>
+    <li>ShamCash payment integration.</li>
+    <li>In-app chat and notifications.</li>
+    <li>Native app store submission.</li>
+  </ul>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 [Your Name].</p>
+    <ul class="foot-links">
+      <li><a href="../index.html#work">All Projects</a></li>
+      <li><a href="../index.html#contact">Request a Demo</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
