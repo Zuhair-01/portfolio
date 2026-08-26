@@ -1,0 +1,58 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="100%" stop-color="#0F1B2E"/>
+    </linearGradient>
+    <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="wave2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg)"/>
+
+  <!-- Animated pulse waves, same motif as the product's own hero graphic -->
+  <g filter="url(#glow)" opacity="0.55">
+    <path d="M-100 220 C 50 220 90 150 220 150 C 350 150 380 250 500 250 C 620 250 650 120 780 120 C 900 120 930 230 1050 230 C 1150 230 1180 190 1300 190"
+      fill="none" stroke="url(#wave1)" stroke-width="2.5">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite"
+        values="M-100 220 C 50 220 90 150 220 150 C 350 150 380 250 500 250 C 620 250 650 120 780 120 C 900 120 930 230 1050 230 C 1150 230 1180 190 1300 190;
+                M-100 190 C 50 190 90 240 220 240 C 350 240 380 130 500 130 C 620 130 650 220 780 220 C 900 220 930 140 1050 140 C 1150 140 1180 210 1300 210;
+                M-100 220 C 50 220 90 150 220 150 C 350 150 380 250 500 250 C 620 250 650 120 780 120 C 900 120 930 230 1050 230 C 1150 230 1180 190 1300 190"/>
+    </path>
+    <path d="M-100 180 C 60 180 100 240 230 240 C 360 240 390 110 510 110 C 630 110 660 220 790 220 C 910 220 940 160 1060 160 C 1160 160 1190 200 1300 200"
+      fill="none" stroke="url(#wave2)" stroke-width="2">
+      <animate attributeName="d" dur="11s" repeatCount="indefinite"
+        values="M-100 180 C 60 180 100 240 230 240 C 360 240 390 110 510 110 C 630 110 660 220 790 220 C 910 220 940 160 1060 160 C 1160 160 1190 200 1300 200;
+                M-100 230 C 60 230 100 140 230 140 C 360 140 390 220 510 220 C 630 220 660 130 790 130 C 910 130 940 210 1060 210 C 1160 210 1190 170 1300 170;
+                M-100 180 C 60 180 100 240 230 240 C 360 240 390 110 510 110 C 630 110 660 220 790 220 C 910 220 940 160 1060 160 C 1160 160 1190 200 1300 200"/>
+    </path>
+  </g>
+
+  <!-- Pulse dot -->
+  <circle cx="120" cy="90" r="5" fill="#F59E0B">
+    <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="120" y="115" font-family="Arial, sans-serif" font-size="52" font-weight="800" fill="#FFFFFF">
+    NABD <tspan fill="#14B8A6" font-size="36">|</tspan> <tspan font-size="40" fill="#E5E7EB">نبض</tspan>
+  </text>
+  <text x="120" y="150" font-family="Arial, sans-serif" font-size="20" fill="#94A3B8">
+    Know who to reach. Know why now.
+  </text>
+  <text x="120" y="185" font-family="Arial, sans-serif" font-size="15" fill="#64748B" letter-spacing="1">
+    FIT × SIGNAL × TIMING = OPPORTUNITY — free-first sales intelligence, zero paid APIs
+  </text>
+</svg>
