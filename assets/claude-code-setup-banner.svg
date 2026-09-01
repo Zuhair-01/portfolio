@@ -1,0 +1,18 @@
+<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="claude-code-setup">
+  <defs>
+    <radialGradient id="ccglow" cx="16%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#d97757" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0a0e17" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="220" rx="20" fill="#0a0e17"/>
+  <rect width="900" height="220" rx="20" fill="url(#ccglow)"/>
+  <g transform="translate(96,74)" fill="none" stroke-width="3">
+    <rect x="0" y="0" width="34" height="34" rx="7" stroke="#d97757"/>
+    <rect x="46" y="0" width="34" height="34" rx="7" stroke="#4f7cff"/>
+    <rect x="0" y="46" width="34" height="34" rx="7" stroke="#4f7cff"/>
+    <rect x="46" y="46" width="34" height="34" rx="7" stroke="#3ddc97"/>
+  </g>
+  <text x="210" y="104" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="33" font-weight="700" fill="#f8fafc">claude-code-setup</text>
+  <text x="212" y="138" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#d97757" opacity="0.9">274 skills · 165 agents · 10k-item offline capability library</text>
+</svg>

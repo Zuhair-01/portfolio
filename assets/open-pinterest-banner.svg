@@ -1,0 +1,18 @@
+<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="open-pinterest">
+  <defs>
+    <radialGradient id="opglow" cx="16%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#e60023" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0e17" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="220" rx="20" fill="#0a0e17"/>
+  <rect width="900" height="220" rx="20" fill="url(#opglow)"/>
+  <g transform="translate(110,66)">
+    <rect x="0" y="0" width="40" height="52" rx="6" fill="#e60023" opacity="0.9"/>
+    <rect x="48" y="12" width="40" height="40" rx="6" fill="#4f7cff" opacity="0.85"/>
+    <rect x="0" y="60" width="40" height="28" rx="6" fill="#3ddc97" opacity="0.8"/>
+    <rect x="48" y="60" width="40" height="28" rx="6" fill="#f8fafc" opacity="0.25"/>
+  </g>
+  <text x="232" y="104" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="33" font-weight="700" fill="#f8fafc">open-pinterest</text>
+  <text x="234" y="138" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#ff6b7d" opacity="0.9">Published Claude Code skill · reference sourcing + subject cutout</text>
+</svg>
