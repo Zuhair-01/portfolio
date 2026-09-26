@@ -4,50 +4,47 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ostazi — Case Study | Zuhair</title>
-<link rel="stylesheet" href="../styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="../case.css" />
 </head>
 <body>
 
-<nav class="nav">
-  <div class="wrap">
-    <a href="../index.html" class="nav-logo">Zuhair<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="../index.html#work">Work</a></li>
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../resume.html">Resume</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
-    </ul>
-    <a href="../index.html#contact" class="nav-cta">Get in Touch</a>
-  </div>
-</nav>
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>Zuhair Alwazzour</span></a>
+  <nav class="navlinks" aria-label="Sections"><a href="../index.html#work">Work</a><a href="../index.html#about">About</a><a href="../resume.html">Resume</a><a href="../index.html#contact">Contact</a></nav>
+  <a class="lang-btn" href="../ar/projects/ostazi.html" lang="ar">العربية</a>
+</div></header>
 
 <div class="wrap breadcrumb"><a href="../index.html">Work</a> / Ostazi</div>
 
 <header class="wrap case-hero">
-  <span class="bonus-badge" style="margin-bottom:16px;display:inline-block">BONUS — LIVE PRODUCTION, NOT A DEMO</span>
-  <h1>Ostazi (ostazi.sy)</h1>
-  <p class="tagline">A real, deployed two-sided tutoring marketplace for Syria: students and parents book verified private tutors on a cash-first commission model. Built solo, end to end.</p>
+  <span class="bonus-badge">LIVE WEBSITE · RELEASE GATES REMAIN</span>
+  <h1>Ostazi</h1>
+  <p class="tagline">A bilingual tutoring platform built for Syria, with student, teacher, and admin flows. The public website is live; booking and payment availability are separate release gates.</p>
   <div class="case-meta">
     <span class="chip">Next.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span><span class="chip">Capacitor</span>
   </div>
   <div class="callout" style="margin-top:8px">
-    Unlike the other five projects, Ostazi's source is kept in a private repository — it handles real bookings and real commission accounting. This page is a case study, demonstrated live rather than published as open source.
+    Ostazi's source is private. This case study describes the implementation and its limits; a live website does not establish that booking, payment, or lesson delivery is currently open to the public.
   </div>
 </header>
 
 <section class="wrap case-section" style="border-top:none">
   <h2><span class="num">01</span>Problem</h2>
-  <p>Finding a qualified private tutor in Syria happens informally, through word of mouth — no verification, no scheduling system, and no accountability if a tutor cancels last-minute or a payment dispute comes up.</p>
+  <p>Finding a suitable private tutor and coordinating lessons through scattered messages leaves students, families, and teachers without a clear shared record of requests and status.</p>
 </section>
 
 <section class="wrap case-section">
   <h2><span class="num">02</span>Why it matters</h2>
-  <p>Education access in Syria depends heavily on private tutoring, but there was no trusted, structured way to find and book one. A cash-first model was a deliberate choice for a market where digital payment rails are limited.</p>
+  <p>A structured flow can make tutor discovery and requests clearer, provided identity checks, delivery, local operations, and legal readiness are established before public booking is enabled.</p>
 </section>
 
 <section class="wrap case-section">
   <h2><span class="num">03</span>Solution</h2>
-  <p>A full marketplace: phone/OTP authentication (no passwords), an admin-driven teacher verification workflow, a real booking state machine with cancellation rules and no-show accountability for both sides, and a versioned commission ledger that survives rate changes without corrupting historical bookings.</p>
+  <p>The platform includes bilingual interfaces, role-specific student and teacher flows, admin review, request and booking logic, and commission records. These implemented paths should not be read as a claim that public booking or payment is enabled today.</p>
 </section>
 
 <section class="wrap case-section">
@@ -61,8 +58,8 @@
        - commission engine: versioned + snapshotted per booking,
          append-only ledger, teacher risk-tier escalation
        - review/rating system with a flag-and-moderate pipeline
-  -> PostgreSQL (Prisma) on Supabase
-  -> Deployed on Vercel; Capacitor wraps the same app for Android/iOS</pre>
+  -> PostgreSQL (Prisma) on Neon; Supabase Storage for media
+  -> Web deployed on Vercel; Capacitor mobile wrapper not distributed in app stores</pre>
 </section>
 
 <section class="wrap case-section">
@@ -80,15 +77,15 @@
 
 <section class="wrap case-section">
   <h2><span class="num">06</span>Security</h2>
-  <p>No passwords anywhere — phone + OTP only. Admin accounts cannot be created through public registration, only via a CLI script. A P0 issue (a debug flag that could have exposed OTP codes outside development) was found and fixed via the hosting platform's API, verified in production, and documented internally rather than silently patched. Legal documents (Terms of Service, Privacy Policy, Cancellation/Refund Policy, Commission Policy) exist in draft form, explicitly marked as not yet reviewed by legal counsel.</p>
+  <p>Phone/OTP authentication and role checks are implemented. Delivery of OTP messages to a handset requires separate confirmation; an HTTP success alone is insufficient. Admin enrollment is kept outside public registration. Legal and operational release requirements still need owner review.</p>
 </section>
 
 <section class="wrap case-section">
   <h2><span class="num">07</span>Limitations</h2>
   <ul>
-    <li>Chat, in-app notifications, and a real SMS gateway aren't built yet (OTP is currently echoed directly for dev/preview testing, not sent via SMS).</li>
-    <li>ShamCash (a common local payment method) has an architecture placeholder but is disabled pending integration.</li>
-    <li>Native app store publishing hasn't happened yet — the Capacitor mobile shell exists but isn't distributed.</li>
+    <li>Public booking and payment remain disabled pending licensing and release readiness.</li>
+    <li>OTP handset delivery and private-media access require separate live verification.</li>
+    <li>Native app store publishing has not happened; the Capacitor shell is not distributed.</li>
   </ul>
 </section>
 
@@ -102,15 +99,10 @@
   </ul>
 </section>
 
-<footer>
-  <div class="wrap">
-    <p>© 2026 Zuhair.</p>
-    <ul class="foot-links">
-      <li><a href="../index.html#work">All Projects</a></li>
-      <li><a href="../index.html#contact">Request a Demo</a></li>
-    </ul>
-  </div>
-</footer>
+<footer class="case-footer"><div class="wrap">
+  <span>&copy; 2026 Zuhair Alwazzour. Damascus.</span>
+  <nav aria-label="More"><a href="../index.html#work">All projects</a><a href="../index.html#contact">Contact</a><a href="../resume.html">Resume</a></nav>
+</div></footer>
 
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Axis | دراسة حالة — زهير الوزّور</title>
+<meta name="description" content="نظام محلي يوجّه المهام الهندسية بين Claude Code وOpenCode وCodex بحسب قدرات النماذج، مع بدائل محددة وحفظ مستمر لحالة المهمة. أداة تستخدم يوميًا، وليست عرضًا صُنع خصيصًا للملف الشخصي.">
+<link rel="stylesheet" href="../../site.css">
+<link rel="stylesheet" href="../../site-ar.css">
+<link rel="stylesheet" href="../../case.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>زهير الوزّور</span></a>
+  <nav class="navlinks" aria-label="أقسام"><a href="../index.html#work">الأعمال</a><a href="../index.html#about">نبذة</a><a href="../resume.html">السيرة الذاتية</a><a href="../index.html#contact">تواصل</a></nav>
+  <a class="lang-btn" href="../../projects/open-axis.html" lang="en">English</a>
+</div></header>
+<main>
+<div class="wrap breadcrumb"><a href="../index.html#work">الأعمال</a> / Open Axis</div>
+<header class="wrap case-hero">
+  <p class="eyebrow">تنسيق أدوات الذكاء الاصطناعي</p>
+  <h1>Open Axis</h1>
+  <p class="tagline">نظام محلي يوجّه المهام الهندسية بين Claude Code وOpenCode وCodex بحسب قدرات النماذج، مع بدائل محددة وحفظ مستمر لحالة المهمة. أداة تستخدم يوميًا، وليست عرضًا صُنع خصيصًا للملف الشخصي.</p>
+  <div class="case-meta"><span class="chip">Python</span><span class="chip">SQLite</span><span class="chip">JSON Schema</span><span class="chip">45/45 اختبارًا</span></div>
+  <div class="case-actions"><a class="btn" href="https://github.com/Zuhair-01/open-axis" target="_blank" rel="noopener">شاهد المستودع <span aria-hidden="true">↗</span></a></div>
+</header>
+<section class="wrap case-section"><h2><span class="num">01</span>المشكلة</h2><p>عند استخدام عدة أدوات برمجية، يُعاد اتخاذ قرار الأداة والنموذج والمهارات المناسبة لكل مهمة يدويًا. وإذا تعطل مزود أثناء التنفيذ، قد تضيع حالة العمل أو تتبدل جودة النتيجة.</p></section>
+<section class="wrap case-section"><h2><span class="num">02</span>الحل</h2><p>يصنّف النظام المهمة، ويختار المهارات والوكيل والنموذج وفق مستويات قدرات موثقة، ثم يستدعي الأداة المناسبة. عند الفشل ينتقل إلى بديل محدد مسبقًا ويحفظ الحالة في SQLite.</p></section>
+<section class="wrap case-section"><h2><span class="num">03</span>البنية</h2><p>بوابة وضوح محلية للمهمات الواضحة، ثم تصنيف للمهمات الملتبسة، ثم اختيار المهارات والوكلاء والنموذج، ثم تنفيذ فعلي عبر CLI، وتسجيل للقرارات والمدة والبدائل.</p></section>
+<section class="wrap case-section"><h2><span class="num">04</span>قرارات هندسية</h2><p>استدعاءات الوكلاء تتم داخل المسار نفسه لتجنب كلفة بدء وكلاء فرعيين. اختُبرت 9 نماذج من أصل 26 على مهام فعلية قبل إدراجها في مستويات القدرات؛ ولا تُخفَّض قدرة النموذج بصمت عند التعثر.</p></section>
+<section class="wrap case-section"><h2><span class="num">05</span>الأمان</h2><p>تُعامل صفحات الويب والملفات والمهارات الخارجية كمحتوى غير موثوق. فحص الأسرار يعرض الحالة فقط، ولا يعرض القيم. العمليات التخريبية تتطلب قرارًا صريحًا.</p></section>
+<section class="wrap case-section"><h2><span class="num">06</span>الحدود والإثبات</h2><p>نجح 45 اختبارًا من أصل 45 بعد إعداد نظيف. مساران فقط من أصل ثلاثة للمزودين يعملان بمصادقة كاملة؛ 17 نموذجًا لم تُقيّم بعد، وبيانات كلفة الرموز غير متاحة من أدوات CLI الحالية.</p></section>
+</main>
+<footer class="case-footer"><div class="wrap"><span>&copy; 2026 زهير الوزّور. دمشق.</span><nav aria-label="المزيد"><a href="../index.html#work">كل المشاريع</a><a href="../index.html#contact">تواصل</a><a href="../resume.html">السيرة الذاتية</a></nav></div></footer>
+</body>
+</html>

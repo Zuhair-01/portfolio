@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise AI Business Assistant | دراسة حالة — زهير الوزّور</title>
+<meta name="description" content="مساعد يجيب عن أسئلة الأعمال من نتائج استعلامات SQL منفَّذة على قاعدة بيانات اصطناعية، ويذكر الجدول المصدر بدل الاعتماد على ذاكرة النموذج.">
+<link rel="stylesheet" href="../../site.css">
+<link rel="stylesheet" href="../../site-ar.css">
+<link rel="stylesheet" href="../../case.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>زهير الوزّور</span></a>
+  <nav class="navlinks" aria-label="أقسام"><a href="../index.html#work">الأعمال</a><a href="../index.html#about">نبذة</a><a href="../resume.html">السيرة الذاتية</a><a href="../index.html#contact">تواصل</a></nav>
+  <a class="lang-btn" href="../../projects/enterprise-ai-assistant.html" lang="en">English</a>
+</div></header>
+<main>
+<div class="wrap breadcrumb"><a href="../index.html#work">الأعمال</a> / Enterprise AI Business Assistant</div>
+<header class="wrap case-hero">
+  <p class="eyebrow">مساعد بيانات الأعمال</p>
+  <h1>Enterprise AI Business Assistant</h1>
+  <p class="tagline">مساعد يجيب عن أسئلة الأعمال من نتائج استعلامات SQL منفَّذة على قاعدة بيانات اصطناعية، ويذكر الجدول المصدر بدل الاعتماد على ذاكرة النموذج.</p>
+  <div class="case-meta"><span class="chip">Ollama</span><span class="chip">Vanna</span><span class="chip">SQLite</span></div>
+  <div class="case-actions"><a class="btn" href="https://github.com/Zuhair-01/enterprise-ai-assistant" target="_blank" rel="noopener">شاهد المستودع <span aria-hidden="true">↗</span></a></div>
+</header>
+<section class="wrap case-section"><h2><span class="num">01</span>المشكلة</h2><p>يريد المستخدم سؤال قاعدة البيانات بلغة طبيعية، لكن روبوت المحادثة العام قد يقدم رقمًا واثقًا من معرفته السابقة بدل الأرقام الفعلية.</p></section>
+<section class="wrap case-section"><h2><span class="num">02</span>الحل</h2><p>للوكيل قدرة واحدة: تنفيذ SQL على قاعدة الشركة الاصطناعية. يجب أن تستند الإجابة إلى نتيجة الاستعلام وأن تذكر الجداول، وأن ترفض الأسئلة الخارجة عن المخطط برسالة محددة.</p></section>
+<section class="wrap case-section"><h2><span class="num">03</span>البنية</h2><p>يختار نموذج Ollama المحلي الاستعلام عبر أداة RunSqlTool على ثمانية جداول اصطناعية في SQLite، ثم يصوغ إجابة من النتيجة المنفَّذة مع اسم الجدول المصدر.</p></section>
+<section class="wrap case-section"><h2><span class="num">04</span>قرار هندسي</h2><p>الاستعلام القابل للفحص هو حاجز الادعاءات، وليس مجرد تعليمات لغوية. أُبقي إطار Vanna المؤرشف ضمن المشروع بدل افتراض توقف كل استخدام له.</p></section>
+<section class="wrap case-section"><h2><span class="num">05</span>التحقق</h2><p>في تشغيل فعلي أجاب عن عدد العقود التي تنتهي خلال 90 يومًا بقيمة 4 وذكر جدول العقود، ورفض سؤالًا عامًا عن عاصمة فرنسا لغيابها عن البيانات المتصلة.</p></section>
+<section class="wrap case-section"><h2><span class="num">06</span>الأمان والحدود</h2><p>النموذج محلي والأداة تقرأ SQL دون كتابة أو حذف. عُثر على خطأين وصُححا، أحدهما أعطى 27 بدل 4 بسبب حد تاريخي مفقود. هذا عرض لمستخدم واحد دون مصادقة حقيقية متعددة المستخدمين.</p></section>
+</main>
+<footer class="case-footer"><div class="wrap"><span>&copy; 2026 زهير الوزّور. دمشق.</span><nav aria-label="المزيد"><a href="../index.html#work">كل المشاريع</a><a href="../index.html#contact">تواصل</a><a href="../resume.html">السيرة الذاتية</a></nav></div></footer>
+</body>
+</html>

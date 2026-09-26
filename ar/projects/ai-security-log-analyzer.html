@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Security Log Analyzer | دراسة حالة — زهير الوزّور</title>
+<meta name="description" content="محرك كشف حتمي لسجلات أمنية اصطناعية يرصد محاولات الدخول المتكررة والسفر المستحيل ومسح المنافذ وغزارة الطلبات، مع ملخصات حوادث من نموذج محلي ولوحة متابعة.">
+<link rel="stylesheet" href="../../site.css">
+<link rel="stylesheet" href="../../site-ar.css">
+<link rel="stylesheet" href="../../case.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>زهير الوزّور</span></a>
+  <nav class="navlinks" aria-label="أقسام"><a href="../index.html#work">الأعمال</a><a href="../index.html#about">نبذة</a><a href="../resume.html">السيرة الذاتية</a><a href="../index.html#contact">تواصل</a></nav>
+  <a class="lang-btn" href="../../projects/ai-security-log-analyzer.html" lang="en">English</a>
+</div></header>
+<main>
+<div class="wrap breadcrumb"><a href="../index.html#work">الأعمال</a> / AI Security Log Analyzer</div>
+<header class="wrap case-hero">
+  <p class="eyebrow">الأمن السيبراني</p>
+  <h1>AI Security Log Analyzer</h1>
+  <p class="tagline">محرك كشف حتمي لسجلات أمنية اصطناعية يرصد محاولات الدخول المتكررة والسفر المستحيل ومسح المنافذ وغزارة الطلبات، مع ملخصات حوادث من نموذج محلي ولوحة متابعة.</p>
+  <div class="case-meta"><span class="chip">Next.js</span><span class="chip">Python</span><span class="chip">Ollama</span><span class="chip">12/12 اختبارًا</span></div>
+  <div class="case-actions"><a class="btn" href="https://github.com/Zuhair-01/ai-security-log-analyzer" target="_blank" rel="noopener">شاهد المستودع <span aria-hidden="true">↗</span></a></div>
+</header>
+<section class="wrap case-section"><h2><span class="num">01</span>المشكلة</h2><p>مراجعة السجلات يدويًا لا تواكب حجمها، بينما لا يوضح رقم شذوذ صادر من نموذج مغلق سبب اعتبار الحدث مريبًا.</p></section>
+<section class="wrap case-section"><h2><span class="num">02</span>الحل</h2><p>سبع قواعد كشف تعتمد حدودًا واضحة. كل حادثة تحمل سببًا مفهومًا والأدلة التي فعّلت القاعدة. يمكن لنموذج محلي تلخيصها دون الادعاء بأن الهجوم نجح ما لم تثبت القاعدة ذلك.</p></section>
+<section class="wrap case-section"><h2><span class="num">03</span>البنية</h2><p>تُقرأ ملفات CSV اصطناعية للمصادقة والجدار الناري والويب والأجهزة؛ ينتج خط المعالجة قائمة حوادث ومؤشرات تُعرض في لوحة Next.js، ثم تُمرر الحادثة اختياريًا إلى Ollama للتلخيص.</p></section>
+<section class="wrap case-section"><h2><span class="num">04</span>قرار هندسي</h2><p>فُصل الكشف القائم على القواعد عن النص المُولَّد، ليتمكن المحلل من مراجعة السبب والدليل. استُبدلت قاعدة مفتوحة المصدر ثقيلة كانت مرتبطة بقوة بـ PostgreSQL وKafka وgRPC بقاعدة أخف تعمل فعلًا.</p></section>
+<section class="wrap case-section"><h2><span class="num">05</span>الأمان</h2><p>جميع السجلات اصطناعية، وعناوين IP المريبة من نطاقات التوثيق المحجوزة في RFC 5737. لا يُعلن الملخص وقوع اختراق مؤكد لمجرد وجود نمط مريب.</p></section>
+<section class="wrap case-section"><h2><span class="num">06</span>الحدود</h2><p>العتبات توضيحية وغير مضبوطة لحركة مؤسسة حقيقية. القواعد السبع لا تلتقط الهجمات الجديدة التي لا تطابقها. صُحح مولد البيانات بعد أن أنتج 315 حادثة سفر مستحيل زائفة؛ بعد التصحيح ظهرت 10 حوادث مقصودة دون ضجيج.</p></section>
+</main>
+<footer class="case-footer"><div class="wrap"><span>&copy; 2026 زهير الوزّور. دمشق.</span><nav aria-label="المزيد"><a href="../index.html#work">كل المشاريع</a><a href="../index.html#contact">تواصل</a><a href="../resume.html">السيرة الذاتية</a></nav></div></footer>
+</body>
+</html>

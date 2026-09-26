@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise BI Platform | دراسة حالة — زهير الوزّور</title>
+<meta name="description" content="لوحة مؤشرات تعتمد خط بيانات فعليًا: ملفات CSV، ثم تحقق وتنظيف وإزالة تكرار وتحويل، ثم نموذج قراءة ولوحة مؤشرات. ليست مجرد بيانات JSON مصطنعة موضوعة مباشرة في الواجهة.">
+<link rel="stylesheet" href="../../site.css">
+<link rel="stylesheet" href="../../site-ar.css">
+<link rel="stylesheet" href="../../case.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>زهير الوزّور</span></a>
+  <nav class="navlinks" aria-label="أقسام"><a href="../index.html#work">الأعمال</a><a href="../index.html#about">نبذة</a><a href="../resume.html">السيرة الذاتية</a><a href="../index.html#contact">تواصل</a></nav>
+  <a class="lang-btn" href="../../projects/enterprise-bi-platform.html" lang="en">English</a>
+</div></header>
+<main>
+<div class="wrap breadcrumb"><a href="../index.html#work">الأعمال</a> / Enterprise BI Platform</div>
+<header class="wrap case-hero">
+  <p class="eyebrow">بيانات وذكاء أعمال</p>
+  <h1>Enterprise BI Platform</h1>
+  <p class="tagline">لوحة مؤشرات تعتمد خط بيانات فعليًا: ملفات CSV، ثم تحقق وتنظيف وإزالة تكرار وتحويل، ثم نموذج قراءة ولوحة مؤشرات. ليست مجرد بيانات JSON مصطنعة موضوعة مباشرة في الواجهة.</p>
+  <div class="case-meta"><span class="chip">Next.js</span><span class="chip">shadcn/ui</span><span class="chip">Python</span><span class="chip">Recharts</span></div>
+  <div class="case-actions"><a class="btn" href="https://github.com/Zuhair-01/enterprise-bi-platform" target="_blank" rel="noopener">شاهد المستودع <span aria-hidden="true">↗</span></a></div>
+</header>
+<section class="wrap case-section"><h2><span class="num">01</span>المشكلة</h2><p>التقارير اليدوية تجمع أرقامًا من مصادر متعددة دون إظهار الصفوف المكررة أو القيم غير الصالحة قبل وصولها إلى اللوحة.</p></section>
+<section class="wrap case-section"><h2><span class="num">02</span>الحل</h2><p>يعالج خط Python صادرات CSV بالتحقق والتنظيف وإزالة التكرار والتحويل إلى نموذج JSON موحد، ثم تعرض واجهة Next.js ملخصًا تنفيذيًا وتحليلات أعمق.</p></section>
+<section class="wrap case-section"><h2><span class="num">03</span>البنية</h2><p>ملفات CSV خام ← تحقق من الحقول والتواريخ ← تنظيف مع تسجيل الأخطاء ← إزالة المفاتيح المكررة ← تجميع وحساب المؤشرات ← ملف bi_dataset.json تقرؤه مكونات الخادم.</p></section>
+<section class="wrap case-section"><h2><span class="num">04</span>التحقق</h2><p>أدخل مولد البيانات الاصطناعية ثلاث مشكلات مقصودة: صفًا مكررًا، واسمًا مطلوبًا فارغًا، وتاريخًا غير صالح. كشفها الخط وسجل حقلًا نُظف وصفًا مكررًا أُزيل؛ بقي 139 موظفًا بعد التنظيف.</p></section>
+<section class="wrap case-section"><h2><span class="num">05</span>قرارات هندسية</h2><p>ملف JSON مناسب لعرض اصطناعي ثابت دون قاعدة مستضافة. صُمم مسار الكتابة بحيث يمكن استبداله لاحقًا. للواجهة نظام ألوان Meridian مخصص بدل المظهر الافتراضي للقالب.</p></section>
+<section class="wrap case-section"><h2><span class="num">06</span>الأمان والحدود</h2><p>لا بيانات أشخاص أو أموال حقيقية ولا مفاتيح API مطلوبة للعرض. ملف JSON ليس قاعدة إنتاجية تنمو باستمرار؛ المرشحات الحالية على مستوى القسم ولا تشمل كل نطاقات التاريخ ووحدات الأعمال.</p></section>
+</main>
+<footer class="case-footer"><div class="wrap"><span>&copy; 2026 زهير الوزّور. دمشق.</span><nav aria-label="المزيد"><a href="../index.html#work">كل المشاريع</a><a href="../index.html#contact">تواصل</a><a href="../resume.html">السيرة الذاتية</a></nav></div></footer>
+</body>
+</html>

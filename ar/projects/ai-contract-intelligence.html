@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Contract Intelligence | دراسة حالة — زهير الوزّور</title>
+<meta name="description" content="استخراج حقول العقود من PDF، ورصد مخاطر محددة، والبحث باللغة الطبيعية في العقود باستخدام Ollama محليًا. لا مفاتيح API مدفوعة ولا إرسال للمستندات إلى خدمة خارجية.">
+<link rel="stylesheet" href="../../site.css">
+<link rel="stylesheet" href="../../site-ar.css">
+<link rel="stylesheet" href="../../case.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>زهير الوزّور</span></a>
+  <nav class="navlinks" aria-label="أقسام"><a href="../index.html#work">الأعمال</a><a href="../index.html#about">نبذة</a><a href="../resume.html">السيرة الذاتية</a><a href="../index.html#contact">تواصل</a></nav>
+  <a class="lang-btn" href="../../projects/ai-contract-intelligence.html" lang="en">English</a>
+</div></header>
+<main>
+<div class="wrap breadcrumb"><a href="../index.html#work">الأعمال</a> / AI Contract Intelligence</div>
+<header class="wrap case-hero">
+  <p class="eyebrow">ذكاء المستندات</p>
+  <h1>AI Contract Intelligence</h1>
+  <p class="tagline">استخراج حقول العقود من PDF، ورصد مخاطر محددة، والبحث باللغة الطبيعية في العقود باستخدام Ollama محليًا. لا مفاتيح API مدفوعة ولا إرسال للمستندات إلى خدمة خارجية.</p>
+  <div class="case-meta"><span class="chip">Ollama</span><span class="chip">FastAPI</span><span class="chip">Streamlit</span><span class="chip">ChromaDB</span></div>
+  <div class="case-actions"><a class="btn" href="https://github.com/Zuhair-01/ai-contract-intelligence" target="_blank" rel="noopener">شاهد المستودع <span aria-hidden="true">↗</span></a></div>
+</header>
+<section class="wrap case-section"><h2><span class="num">01</span>المشكلة</h2><p>العثور يدويًا على العقود القريبة من الانتهاء أو بنود التجديد التلقائي بطيء، وقد تختبئ معلومة مهمة في صفحة متأخرة من ملف PDF.</p></section>
+<section class="wrap case-section"><h2><span class="num">02</span>الحل</h2><p>يستخرج نموذج محلي حقولًا ثابتة من النص الصريح فقط، ثم تكشف قواعد حتمية أنماط مخاطر محددة. يتيح مسار بحث منفصل طرح أسئلة عبر مجموعة العقود مع إحالات إلى المصادر.</p></section>
+<section class="wrap case-section"><h2><span class="num">03</span>البنية</h2><p>استخراج النص عبر pdfplumber، ثم مسار بحث يعتمد تقسيم النص وتضمينه في ChromaDB، ومسار استخراج منظم يعيد الحقول الموجودة والحقول الناقصة قبل توليد ملخص من الحقائق المستخرجة وحدها.</p></section>
+<section class="wrap case-section"><h2><span class="num">04</span>قرار هندسي</h2><p>فُصلت الحقائق عن الملخص بنيويًا؛ لا يُولَّد الملخص مباشرة من المستند الخام. اختير pdfplumber لتجنب اعتماد OCR خارجي، مع قبول أنه لا يقرأ النسخ المصورة فقط.</p></section>
+<section class="wrap case-section"><h2><span class="num">05</span>التحقق</h2><p>في عقد اصطناعي ناقص، أعاد النظام قيمة فارغة للحقول غير الموجودة وقائمة بالحقول الناقصة بدل اختراع قيمة عقد أو تاريخ بداية.</p></section>
+<section class="wrap case-section"><h2><span class="num">06</span>الأمان والحدود</h2><p>المعالجة محلية وتعرض تنبيهًا بأن المخرجات تحتاج مراجعة بشرية ولا تشكل نصيحة قانونية. الدقة تعتمد على النموذج المحلي، ولا يوجد OCR، وقواعد المخاطر توضيحية وليست قائمة قانونية شاملة.</p></section>
+</main>
+<footer class="case-footer"><div class="wrap"><span>&copy; 2026 زهير الوزّور. دمشق.</span><nav aria-label="المزيد"><a href="../index.html#work">كل المشاريع</a><a href="../index.html#contact">تواصل</a><a href="../resume.html">السيرة الذاتية</a></nav></div></footer>
+</body>
+</html>
