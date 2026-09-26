@@ -106,8 +106,12 @@
 
   var copy = document.querySelector('.copy');
   if (copy) {
+    var copyLabel = copy.querySelector('.t');
+    var copyDefault = copyLabel ? copyLabel.textContent : (I18N.copyEmail || 'Copy email');
     copy.addEventListener('click', function () {
-      var done = function () { copy.textContent = I18N.copied || 'Copied'; setTimeout(function () { copy.textContent = EMAIL; }, 1600); };
+      var done = function () {
+        if (copyLabel) { copyLabel.textContent = I18N.copied || 'Copied'; setTimeout(function () { copyLabel.textContent = copyDefault; }, 1600); }
+      };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(EMAIL).then(done, function () {});
       else { var t = document.createElement('textarea'); t.value = EMAIL; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); done(); } catch (e) {} t.remove(); }
     });

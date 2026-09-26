@@ -33,8 +33,12 @@
       <button type="button" data-mode="build" aria-pressed="false">Build with me</button>
     </div>
     <nav class="navlinks" aria-label="Sections">
-      <a href="#work">Work</a><a href="#social">Content</a><a href="#about">About</a><a href="#contact">Contact</a><a href="resume.html">Resume</a><a href="ar/index.html">العربية</a>
+      <a href="#work">Work</a><a href="#social">Content</a><a href="#about">About</a><a href="#contact">Contact</a><a href="resume.html">Resume</a>
     </nav>
+    <a class="lang-btn" href="ar/index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"/></svg>
+      العربية
+    </a>
   </div>
 </header>
 
@@ -48,7 +52,7 @@
           <span class="swap" data-hire="I ship AI systems" data-build="Your idea, built and">I ship AI systems</span>
           <span class="swap hl" data-hire="that run in production." data-build="live on the internet.">that run in production.</span>
         </h1>
-        <p class="lede swap" data-hire="Two live products in Syria, eleven systems built end to end, and every claim on this page has a link or a test count behind it. Engineering student in AI and cybersecurity, open to remote junior AI, data and automation roles." data-build="I built Ostazi from zero into a running tutoring marketplace, and I put Alwazour's whole Arabic catalog online for its owner. Bring me the idea. You get a live link, not a mockup.">Two live products in Syria, eleven systems built end to end, and every claim on this page has a link or a test count behind it. Engineering student in AI and cybersecurity, open to remote junior AI, data and automation roles.</p>
+        <p class="lede swap" data-hire="Two live products in Syria, twelve systems built end to end, and every claim on this page has a link or a test count behind it. Engineering student in AI and cybersecurity, open to remote roles in AI, data, automation, growth and content." data-build="I built Ostazi from zero into a running tutoring marketplace, and I put Alwazour's whole Arabic catalog online for its owner. Bring me the idea. You get a live link, not a mockup.">Two live products in Syria, twelve systems built end to end, and every claim on this page has a link or a test count behind it. Engineering student in AI and cybersecurity, open to remote roles in AI, data, automation, growth and content.</p>
         <div class="cta-row">
           <a class="btn" data-cta href="mailto:zoherwazz6@gmail.com?subject=Role%20inquiry%20for%20Zuhair">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -283,13 +287,16 @@
     <p class="kicker reveal">About</p>
     <h2 class="reveal">A solo founder who also writes the code.</h2>
     <div class="about">
+      <div class="reveal">
+        <img class="portrait" src="assets/zuhair-portrait.jpg" width="900" height="1013" alt="Zuhair Alwazzour" loading="lazy">
+      </div>
       <dl class="facts reveal">
         <div><dt>Based</dt><dd>Damascus, Syria. Remote-friendly.</dd></div>
         <div><dt>Running</dt><dd>Ostazi, as solo founder</dd></div>
         <div><dt>Studying</dt><dd>Engineering, AI and Cybersecurity, Syrian Private University</dd></div>
         <div><dt>Languages</dt><dd>Arabic (native), English (IELTS 6.5 overall)</dd></div>
         <div><dt>Also</dt><dd>Athlete</dd></div>
-        <div><dt>Open to</dt><dd><span class="swap" data-hire="Remote junior AI, data and automation roles" data-build="Building your website or product from scratch">Remote junior AI, data and automation roles</span></dd></div>
+        <div><dt>Open to</dt><dd><span class="swap" data-hire="Remote roles in AI, data, automation, growth or content, and product builds from an idea" data-build="Building your website, product or content system from scratch">Remote roles in AI, data, automation, growth or content, and product builds from an idea</span></dd></div>
       </dl>
       <div class="reveal">
         <p>Zuhair Alwazzour (زهير الوزّور) is a Syrian entrepreneur and athlete based in Damascus, and the solo founder of Ostazi, a private tutoring platform serving students across Syria.</p>
@@ -310,7 +317,11 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           <span class="t">Email me about a role</span>
         </a>
-        <button type="button" class="btn ghost copy" aria-label="Copy email address">zoherwazz6@gmail.com</button>
+        <button type="button" class="btn ghost copy" title="zoherwazz6@gmail.com" aria-label="Copy email address, zoherwazz6@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+          <span class="t">Copy email</span>
+        </button>
+        <a class="btn ghost" href="resume.html"><span class="swap" data-hire="See my CV" data-build="See my resume">See my CV</span></a>
       </div>
       <p class="ps" data-only="hire"><b>P.S.</b> Not sure yet? Read the <a href="projects/open-axis.html" style="text-decoration:underline">Open Axis case study</a>. It shows how I work: the tests, the trade-offs, and what is still not done.</p>
       <p class="ps" data-only="build"><b>P.S.</b> One sentence about what you want built is enough to start. I will reply with the first questions.</p>
@@ -322,11 +333,19 @@
 <footer>
   <div class="wrap">
     <span>&copy; 2026 Zuhair Alwazzour. Damascus.</span>
-    <nav aria-label="Elsewhere">
-      <a href="https://github.com/Zuhair-01" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/zuhairalwazzour" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://wa.me/963968304197" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="https://zuhairalwazzour.vercel.app" target="_blank" rel="noopener">Profile</a>
+    <nav class="social-links" aria-label="Elsewhere">
+      <a href="https://wa.me/963968304197" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.14c-.24.68-1.4 1.32-1.94 1.4-.49.08-1.1.11-1.78-.11a15.9 15.9 0 0 1-1.6-.6c-2.83-1.22-4.67-4.07-4.81-4.26-.14-.19-1.15-1.53-1.15-2.93s.73-2.08.98-2.36c.26-.28.56-.35.75-.35h.53c.17 0 .4-.02.62.48s.76 1.86.83 2c.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.13.44.19.5.3.07.11.07.63-.17 1.31Z"/></svg>
+      </a>
+      <a href="https://instagram.com/zuhair._wazzour" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://github.com/Zuhair-01" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/zuhairalwazzour" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3.2 8.75h3.5V21H3.2V8.75Zm6.2 0h3.36v1.68h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.32 4.18 5.35V21h-3.5v-6.32c0-1.5-.03-3.44-2.1-3.44-2.1 0-2.42 1.64-2.42 3.33V21H9.4V8.75Z"/></svg>
+      </a>
       <a href="resume.html">Resume</a>
     </nav>
   </div>

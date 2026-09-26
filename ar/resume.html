@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>زهير الوزّور - السيرة الذاتية</title>
+<meta name="description" content="زهير الوزّور، مؤسس أستاذي. هندسة ذكاء اصطناعي، بناء منتجات، وأمن سيبراني. دمشق، سوريا.">
+<link href="../assets/fonts/camel-regular.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'Camel';src:url('../assets/fonts/camel-regular.woff2') format('woff2');font-weight:400;font-display:swap}
+  @font-face{font-family:'Camel';src:url('../assets/fonts/camel-medium.woff2') format('woff2');font-weight:600;font-display:swap}
+  @font-face{font-family:'Camel';src:url('../assets/fonts/camel-extrabold.woff2') format('woff2');font-weight:800;font-display:swap}
+  :root{
+    --ink:#17171a; --muted:#5b5b63; --line:#dedad2; --accent:#5b6b2f; --paper:#f8f6f1;
+    --display:'Camel',Tahoma,sans-serif; --body:'Camel',Tahoma,sans-serif; --mono:'Camel',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#2a2a2c;color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.65;padding:32px 16px}
+  .bar{max-width:210mm;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .bar a,.bar button{font-family:var(--mono);font-size:13px;color:#f4f1ea;background:#3a3a3d;border:1px solid #4a4a4e;padding:9px 16px;border-radius:8px;text-decoration:none;cursor:pointer;font-weight:600}
+  .bar a:hover,.bar button:hover{background:#46464a}
+  .bar .home{color:#a8a89e}
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto;background:var(--paper);
+    padding:16mm 18mm;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);
+    border-top:7px solid var(--accent);
+  }
+  header.head{display:flex;gap:20px;align-items:center;border-bottom:2.5px solid var(--ink);padding-bottom:14px;margin-bottom:16px}
+  header.head img{width:78px;height:78px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--paper);outline:1.5px solid var(--accent);box-shadow:0 4px 14px rgba(0,0,0,.18)}
+  h1{font-family:var(--display);font-weight:800;font-size:29px}
+  .role{font-size:14.5px;color:var(--accent);font-weight:700;margin-top:3px}
+  .contact{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--muted);margin-top:7px}
+  .contact a{color:var(--muted);text-decoration:none}
+  .contact span.sep{color:#c9c5ba}
+  h2.sec{
+    font-size:13px;letter-spacing:.03em;color:var(--accent);font-weight:700;
+    margin:18px 0 8px;border-top:1px solid var(--line);padding-top:10px;
+  }
+  section:first-of-type h2.sec{border-top:0;margin-top:0}
+  p.summary{font-size:14.5px;color:#2c2c2e}
+  .job{margin-bottom:12px}
+  .job:last-child{margin-bottom:0}
+  .job .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .job b{font-size:15px}
+  .job .where{color:var(--accent);font-weight:600}
+  .job time{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .job ul{margin:5px 18px 0 0;padding:0}
+  .job li{font-size:14px;margin-bottom:2px;color:#2c2c2e}
+  .job .stack{font-size:12px;color:var(--muted);margin-top:4px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+  .skillgrp{margin-bottom:9px}
+  .skillgrp b{display:block;font-size:13px;margin-bottom:2px}
+  .skillgrp span{font-size:13.5px;color:#2c2c2e}
+  .eduline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px}
+  .eduline time{font-size:12.5px;color:var(--muted)}
+  .facts{font-size:14px}
+  .facts div{display:flex;gap:6px;margin-bottom:3px}
+  .facts b{min-width:78px;font-weight:600}
+  @media print{
+    body{background:#fff;padding:0}
+    .bar{display:none}
+    .page{box-shadow:none;margin:0;width:auto;min-height:0}
+    @page{size:A4;margin:14mm 16mm}
+  }
+  @media (max-width:760px){
+    .page{width:100%;padding:22px}
+    .grid2{grid-template-columns:1fr}
+    header.head{flex-direction:column;text-align:center}
+    .contact{justify-content:center}
+    .job .row{flex-direction:column;gap:2px}
+  }
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="home" href="../index.html">→ العودة للموقع</a>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <a href="../resume.html">&#127760; English</a>
+    <button onclick="window.print()">&#8681; تنزيل / طباعة PDF</button>
+  </div>
+</div>
+
+<div class="page">
+  <header class="head">
+    <img src="../assets/zuhair-portrait-sq.jpg" alt="زهير الوزّور">
+    <div>
+      <h1>زهير الوزّور</h1>
+      <p class="role">مؤسس أستاذي &middot; هندسة ذكاء اصطناعي وأمن سيبراني</p>
+      <p class="contact">
+        <span>دمشق، سوريا</span><span class="sep">&middot;</span>
+        <a href="mailto:zoherwazz6@gmail.com">zoherwazz6@gmail.com</a><span class="sep">&middot;</span>
+        <a href="https://wa.me/963968304197" dir="ltr" style="unicode-bidi:isolate">0968 304 197</a><span class="sep">&middot;</span>
+        <a href="https://github.com/Zuhair-01">github.com/Zuhair-01</a><span class="sep">&middot;</span>
+        <a href="https://www.linkedin.com/in/zuhairalwazzour">linkedin.com/in/zuhairalwazzour</a>
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="sec">نبذة</h2>
+    <p class="summary">مؤسس وحيد وطالب هندسة، أبني أنظمة ذكاء اصطناعي وويب حقيقية من الألف إلى الياء: قاعدة البيانات، الخلفية، الواجهة، النشر، والدعم. أسست وأدير أستاذي، منصة دروس خصوصية ذات وجهين تعمل فعليًا لطلاب في سوريا. اثنا عشر نظامًا علنيًا وخاصًا مبنيًا بتغطية اختبارات موثقة، من بينها نقل نموذج قرار ذكاء اصطناعي عبر منصات (Apache-2.0)، وموجّه مهام متعدد الوكلاء، ومحلل سجلات أمني حتمي. مرتاح لتولي مشروع من فكرة عميل حتى منتج فعلي مُدار.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">خبرة كمؤسس</h2>
+    <div class="job">
+      <div class="row"><b>مؤسس ومطوّر وحيد</b><time>2026 &ndash; حتى الآن</time></div>
+      <div class="where">أستاذي &middot; ostazi-edu.com</div>
+      <ul>
+        <li>صمّمت وبنيت منصة دروس خصوصية ذات وجهين لسوريا من الصفر: تسجيل دخول برمز عبر واتساب، آلة حالة كاملة للحجز، وسجل عمولات مرقّم قابل للتدقيق.</li>
+        <li>أطلقت توثيق المعلمين، حسابات المعاهد والمدارس، ولوحة تحكم تشغيلية داخلية.</li>
+        <li>أدير كامل النظام في الإنتاج، من مخطط قاعدة البيانات حتى الدعم بعد الإطلاق، بلا أي مهندس آخر.</li>
+      </ul>
+      <div class="stack">Next.js &middot; NestJS &middot; PostgreSQL &middot; Prisma &middot; Vercel</div>
+    </div>
+    <div class="job">
+      <div class="row"><b>مطوّر ويب مستقل</b><time>2026</time></div>
+      <div class="where">الوزور التقني &middot; دمشق، مشروع لعميل</div>
+      <ul>
+        <li>نقلت شركة توريد تقني في دمشق من عدم وجود أي حضور إلكتروني إلى متجر فعلي كامل باللغة العربية من اليمين لليسار مع مسار استفسار عن المنتجات.</li>
+        <li>الموقع قيد الاستخدام اليومي من صاحب العمل للاستفسارات الحقيقية.</li>
+      </ul>
+      <div class="stack">Next.js &middot; عربي RTL &middot; Vercel</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">مشاريع مختارة</h2>
+    <div class="job">
+      <div class="row"><b>Laya Windows</b> &mdash; نموذج قرار مصنّف، منقول إلى ويندوز<time>علني، Apache-2.0</time></div>
+      <ul>
+        <li>نقلت نموذجًا معايرًا من Core ML الحصري على أجهزة Apple إلى ONNX Runtime وDirectML، ليعمل على أي معالج رسومي DirectX 12 على ويندوز.</li>
+        <li>بنيت حزمة تقييم عربية كاملة لم تكن موجودة في المشروع الأصلي، وموثّقة بعشر لغات.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="row"><b>Open Axis</b> &mdash; موجّه مهام متعدد الوكلاء<time>45/45 اختبارًا ناجحًا</time></div>
+      <ul><li>يوجّه مهام الهندسة عبر Claude Code وOpenCode وCodex، بتوجيه حسب مستوى القدرة وتراجع تلقائي وحالة مهام دائمة. قيد الاستخدام اليومي الشخصي.</li></ul>
+    </div>
+    <div class="job">
+      <div class="row"><b>Kyros</b> &mdash; موزّع مهام حتمي للذكاء الاصطناعي<time>16/16 اختبارًا ناجحًا</time></div>
+      <ul><li>حلقة تحكم رئيسية وعاملة، حيث نموذج تخطيط يوجّه العمل لأسطول نماذج محلي، منظّم عبر قفل GPU، مع اختيار مستوى قابل للتدقيق.</li></ul>
+    </div>
+    <div class="job">
+      <div class="row"><b>AI Security Log Analyzer</b> &mdash; كشف تهديدات حتمي<time>12/12 اختبارًا ناجحًا</time></div>
+      <ul><li>كشف قائم على قواعد لهجمات القوة الغاشمة، السفر المستحيل، ومسح المنافذ؛ نموذج محلي يلخّص حادثة مكتشفة فقط، لا يكتشفها.</li></ul>
+    </div>
+  </section>
+
+  <div class="grid2">
+    <section>
+      <h2 class="sec">التعليم</h2>
+      <div class="eduline"><span><b>هندسة الذكاء الاصطناعي والأمن السيبراني</b><br>الجامعة السورية الخاصة</span><time>قيد الدراسة</time></div>
+    </section>
+    <section>
+      <h2 class="sec">اللغات</h2>
+      <p class="facts"><div><b>العربية</b> لغة أم</div><div><b>الإنجليزية</b> IELTS 6.5</div></p>
+    </section>
+  </div>
+
+  <section>
+    <h2 class="sec">المهارات التقنية</h2>
+    <div class="grid2">
+      <div>
+        <div class="skillgrp"><b>هندسة الذكاء الاصطناعي والنماذج اللغوية</b><span>نشر نماذج محلية عبر Ollama، خطوط RAG، وكلاء استدعاء أدوات، تصميم حماية من الهلوسة، هندسة توجيه</span></div>
+        <div class="skillgrp"><b>الويب والمنتج</b><span>Next.js وReact وTypeScript وNestJS، واجهات عربية RTL، تسجيل دخول وحجوزات، نشر على Vercel</span></div>
+      </div>
+      <div>
+        <div class="skillgrp"><b>البيانات والأتمتة</b><span>خطوط ETL، تحقق وتنظيف بيانات، SQL ونمذجة علائقية، Python، أتمتة متصفح</span></div>
+        <div class="skillgrp"><b>الأمن والعمليات</b><span>منطق كشف تهديدات، فحص أسرار، إعداد آمن، Git، تحقق بأسلوب CI، Docker</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">متاح لـ</h2>
+    <p class="summary">أدوار عن بعد في الذكاء الاصطناعي والبيانات والأتمتة والتسويق والمحتوى، وبناء منتجات لمؤسسين يريدون تحويل فكرة إلى نظام فعلي يعمل.</p>
+  </section>
+</div>
+
+</body>
+</html>

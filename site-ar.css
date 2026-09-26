@@ -11,8 +11,6 @@ html[dir="rtl"] body{font-feature-settings:"kern" 1}
 html[dir="rtl"] .eyebrow::before{margin-inline-end:0}
 html[dir="rtl"] .steps li{grid-template-columns:1fr 44px}
 html[dir="rtl"] .steps li::before{order:2}
-html[dir="rtl"] .facts div{grid-template-columns:1fr 110px}
-html[dir="rtl"] .facts dt{text-align:left}
 html[dir="rtl"] .who{flex-direction:row-reverse}
 html[dir="rtl"] .score-row:not(.score-head)::before{left:auto;right:0}
 html[dir="rtl"] .more svg,html[dir="rtl"] .btn svg{transform:scaleX(-1)}

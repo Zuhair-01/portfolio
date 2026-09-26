@@ -1,160 +1,187 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Resume | Zuhair</title>
-<link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zuhair Alwazzour - Resume</title>
+<meta name="description" content="Zuhair Alwazzour - Founder of Ostazi. AI engineering, product builds, and security. Damascus, Syria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  .resume-doc { max-width: 760px; margin: 0 auto; padding: 56px 24px 90px; }
-  .resume-doc h1 { font-family: var(--font-display); font-size: 2rem; margin: 0 0 4px; }
-  .resume-doc .role { color: var(--accent); font-family: var(--font-mono); font-size: 0.9rem; margin-bottom: 14px; }
-  .resume-contact { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 36px; }
-  .resume-contact a { color: var(--text-dim); text-decoration: none; }
-  .resume-contact a:hover { color: var(--accent); }
-  .resume-doc h2 { font-family: var(--font-display); font-size: 1.05rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin: 36px 0 16px; letter-spacing: 0.01em; }
-  .resume-doc p { color: var(--text-dim); font-size: 0.95rem; }
-  .r-entry { margin-bottom: 18px; }
-  .r-entry .r-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .r-entry .r-title { font-weight: 600; color: var(--text); font-size: 0.96rem; }
-  .r-entry .r-meta { color: var(--text-faint); font-size: 0.84rem; font-family: var(--font-mono); }
-  .r-entry ul { margin: 8px 0 0; padding-left: 18px; color: var(--text-dim); font-size: 0.9rem; }
-  .r-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
-  .r-skills-grid div { font-size: 0.9rem; color: var(--text-dim); }
-  .r-skills-grid strong { color: var(--text); }
-  @media print {
-    .nav, footer, .print-hide { display: none !important; }
-    body { background: #fff; color: #111; }
-    .resume-doc h1, .resume-doc h2, .role { color: #111; }
+  :root{
+    --ink:#17171a; --muted:#5b5b63; --line:#dedad2; --accent:#5b6b2f; --paper:#f8f6f1;
+    --display:'Bricolage Grotesque',Georgia,serif; --body:'Instrument Sans',Arial,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
   }
-  @media (max-width: 600px) {
-    .r-skills-grid { grid-template-columns: 1fr; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#2a2a2c;color:var(--ink);font-family:var(--body);font-size:14.5px;line-height:1.55;padding:32px 16px}
+  .bar{max-width:210mm;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .bar a,.bar button{font-family:var(--mono);font-size:13px;color:#f4f1ea;background:#3a3a3d;border:1px solid #4a4a4e;padding:9px 16px;border-radius:8px;text-decoration:none;cursor:pointer;font-weight:600}
+  .bar a:hover,.bar button:hover{background:#46464a}
+  .bar .home{color:#a8a89e}
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto;background:var(--paper);
+    padding:16mm 18mm;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);
+    border-top:7px solid var(--accent);position:relative;
+  }
+  header.head{display:flex;gap:20px;align-items:center;border-bottom:2.5px solid var(--ink);padding-bottom:14px;margin-bottom:16px}
+  header.head img{width:78px;height:78px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--paper);outline:1.5px solid var(--accent);box-shadow:0 4px 14px rgba(0,0,0,.18)}
+  h1{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.015em}
+  .role{font-size:14.5px;color:var(--accent);font-weight:700;margin-top:3px;letter-spacing:.01em}
+  .contact{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12.5px;color:var(--muted);margin-top:7px;font-family:var(--mono)}
+  .contact a{color:var(--muted);text-decoration:none}
+  .contact span.sep{color:#c9c5ba}
+  h2.sec{
+    font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+    margin:18px 0 8px;padding-top:2px;border-top:1px solid var(--line);padding-top:10px;
+  }
+  section:first-of-type h2.sec{border-top:0;margin-top:0}
+  p.summary{font-size:14px;color:#2c2c2e}
+  .job{margin-bottom:12px}
+  .job:last-child{margin-bottom:0}
+  .job .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .job b{font-size:14.5px}
+  .job .where{color:var(--accent);font-weight:600}
+  .job time{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+  .job ul{margin:5px 0 0;padding-inline-start:18px}
+  .job li{font-size:13.5px;margin-bottom:2px;color:#2c2c2e}
+  .job .stack{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:4px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+  .skillgrp{margin-bottom:9px}
+  .skillgrp b{display:block;font-size:12.5px;margin-bottom:2px}
+  .skillgrp span{font-size:13px;color:#2c2c2e}
+  .eduline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13.5px}
+  .eduline time{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .facts{font-size:13.5px}
+  .facts div{display:flex;gap:6px;margin-bottom:3px}
+  .facts b{min-width:78px;font-weight:600}
+  @media print{
+    body{background:#fff;padding:0}
+    .bar{display:none}
+    .page{box-shadow:none;margin:0;width:auto;min-height:0}
+    @page{size:A4;margin:14mm 16mm}
+  }
+  @media (max-width:760px){
+    .page{width:100%;padding:22px}
+    .grid2{grid-template-columns:1fr}
+    header.head{flex-direction:column;text-align:center}
+    .contact{justify-content:center}
+    .job .row{flex-direction:column;gap:2px}
   }
 </style>
 </head>
 <body>
-
-<nav class="nav print-hide">
-  <div class="wrap">
-    <a href="index.html" class="nav-logo">Zuhair<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html#work">Work</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <a href="#" class="nav-cta" onclick="window.print(); return false;">Print / Save PDF</a>
+<div class="bar">
+  <a class="home" href="index.html">&larr; Back to site</a>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <a href="ar/resume.html">&#127760; العربية</a>
+    <button onclick="window.print()">&#8681; Download / Print PDF</button>
   </div>
-</nav>
+</div>
 
-<main class="resume-doc">
-  <h1>Zuhair Wazz</h1>
-  <div class="role">AI Engineering & Data Automation</div>
-  <div class="resume-contact">
-    zoherwazz6@gmail.com &nbsp;·&nbsp; 0968304197 &nbsp;·&nbsp; Syria &nbsp;·&nbsp;
-    <a href="https://github.com/Zuhair-01" target="_blank" rel="noopener">github.com/Zuhair-01</a> &nbsp;·&nbsp;
-    <a href="https://www.linkedin.com/in/zuhairalwazzour" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp;
-    <a href="index.html">Portfolio</a>
-  </div>
-
-  <h2>Professional Summary</h2>
-  <p>Artificial Intelligence & Cybersecurity engineering student focused on building practical systems across AI, data automation, information systems, and security analytics. Experienced in developing independent software projects using modern AI-assisted development workflows, databases, and web technologies. Interested in junior opportunities where technology can improve business processes, information management, and operational efficiency.</p>
-
-  <h2>Education</h2>
-  <div class="r-entry">
-    <div class="r-head">
-      <span class="r-title">Syrian Private University (SPU)</span>
-      <span class="r-meta">Current Student</span>
+<div class="page">
+  <header class="head">
+    <img src="assets/zuhair-portrait-sq.jpg" alt="Zuhair Alwazzour">
+    <div>
+      <h1>Zuhair Alwazzour</h1>
+      <p class="role">Founder, Ostazi &middot; AI Engineering &amp; Cybersecurity</p>
+      <p class="contact">
+        <span>Damascus, Syria</span><span class="sep">&middot;</span>
+        <a href="mailto:zoherwazz6@gmail.com">zoherwazz6@gmail.com</a><span class="sep">&middot;</span>
+        <a href="https://wa.me/963968304197">+963 968 304 197</a><span class="sep">&middot;</span>
+        <a href="https://github.com/Zuhair-01">github.com/Zuhair-01</a><span class="sep">&middot;</span>
+        <a href="https://www.linkedin.com/in/zuhairalwazzour">linkedin.com/in/zuhairalwazzour</a>
+      </p>
     </div>
-    <p style="margin:4px 0 0">Engineering — Artificial Intelligence & Cybersecurity</p>
-  </div>
+  </header>
 
-  <h2>Technical Skills</h2>
-  <div class="r-skills-grid">
-    <div><strong>AI / LLM:</strong> Ollama, RAG pipelines, tool-calling agents, prompt engineering, hallucination-guard design</div>
-    <div><strong>Data:</strong> ETL pipelines, data validation, SQL, Python (pandas, stdlib)</div>
-    <div><strong>Full-Stack:</strong> Next.js, React, TypeScript, Node.js, PostgreSQL, Prisma, SQLite</div>
-    <div><strong>Security:</strong> Threat detection logic, secure config, secret scanning, Git</div>
-  </div>
+  <section>
+    <h2 class="sec">Summary</h2>
+    <p class="summary">Solo founder and engineering student building production AI and web systems end to end: database, backend, interface, deployment, and support. Founded and personally operate Ostazi, a live two-sided tutoring marketplace serving students across Syria. Twelve public and private systems shipped with documented test coverage, including a cross-platform AI decision-model port (Apache-2.0), a multi-agent task router, and a deterministic security log analyzer. Comfortable owning a project from a client's idea through a live, maintained product.</p>
+  </section>
 
-  <h2>Selected Projects</h2>
-
-  <div class="r-entry">
-    <div class="r-head">
-      <span class="r-title">Open Axis — Local AI orchestration control plane</span>
-      <span class="r-meta">github.com/Zuhair-01/open-axis</span>
+  <section>
+    <h2 class="sec">Founder Experience</h2>
+    <div class="job">
+      <div class="row"><b>Founder &amp; Sole Developer</b><time>2026 &ndash; Present</time></div>
+      <div class="where">Ostazi &middot; ostazi-edu.com</div>
+      <ul>
+        <li>Designed and built a two-sided tutoring marketplace for Syria from zero: phone/OTP auth, a full booking state machine, and a versioned commission ledger for auditable payouts.</li>
+        <li>Shipped verified-teacher onboarding, institute and school account types, and an internal admin operations panel.</li>
+        <li>Own the full stack in production &mdash; database schema, API, frontend, deployment, and post-launch support &mdash; with no other engineers.</li>
+      </ul>
+      <div class="stack">Next.js &middot; NestJS &middot; PostgreSQL &middot; Prisma &middot; Vercel</div>
     </div>
-    <ul>
-      <li>Built a routing layer across 3 AI CLIs with capability-tier enforcement, deterministic fallback, and durable task state.</li>
-      <li>45/45 tests passing, verified from a clean environment build.</li>
-    </ul>
-  </div>
-
-  <div class="r-entry">
-    <div class="r-head">
-      <span class="r-title">Enterprise BI Platform — Business intelligence dashboard</span>
-      <span class="r-meta">github.com/Zuhair-01/enterprise-bi-platform</span>
+    <div class="job">
+      <div class="row"><b>Freelance Web Developer</b><time>2026</time></div>
+      <div class="where">Alwazour Technical Supply &middot; Damascus, client project</div>
+      <ul>
+        <li>Took a Damascus technology-supply business from no online presence to a live, fully Arabic right-to-left storefront with a working product-inquiry flow.</li>
+        <li>Site is in daily use by the business owner for real customer inquiries.</li>
+      </ul>
+      <div class="stack">Next.js &middot; Arabic RTL &middot; Vercel</div>
     </div>
-    <ul>
-      <li>Built a real CSV validation/cleaning/dedup/transform pipeline feeding a Next.js executive dashboard.</li>
-    </ul>
-  </div>
+  </section>
 
-  <div class="r-entry">
-    <div class="r-head">
-      <span class="r-title">AI Contract Intelligence — Local-LLM document extraction</span>
-      <span class="r-meta">github.com/Zuhair-01/ai-contract-intelligence</span>
+  <section>
+    <h2 class="sec">Selected Projects</h2>
+    <div class="job">
+      <div class="row"><b>Laya Windows</b> &mdash; typed-decision AI model, ported to Windows<time>Public, Apache-2.0</time></div>
+      <ul>
+        <li>Ported a calibrated typed-decision model off Apple-exclusive Core ML onto ONNX Runtime and DirectML, so it runs on any DirectX 12 GPU on Windows.</li>
+        <li>Built a first-class Arabic evaluation suite the original project did not have; documented in 10 languages.</li>
+      </ul>
     </div>
-    <ul>
-      <li>Structured contract field extraction with a local LLM that reports missing data instead of inventing it.</li>
-    </ul>
-  </div>
-
-  <div class="r-entry">
-    <div class="r-head">
-      <span class="r-title">Enterprise AI Business Assistant — Hallucination-guarded SQL assistant</span>
-      <span class="r-meta">github.com/Zuhair-01/enterprise-ai-assistant</span>
+    <div class="job">
+      <div class="row"><b>Open Axis</b> &mdash; multi-agent task router<time>45/45 tests passing</time></div>
+      <ul>
+        <li>Routes engineering tasks across Claude Code, OpenCode, and Codex with capability-tier routing, deterministic fallback, and durable task state. In daily personal use.</li>
+      </ul>
     </div>
-    <ul>
-      <li>Built an agent that only answers from executed SQL results; found and fixed 2 real accuracy bugs during testing.</li>
-    </ul>
-  </div>
-
-  <div class="r-entry">
-    <div class="r-head">
-      <span class="r-title">AI Security Log Analyzer — Deterministic threat detection</span>
-      <span class="r-meta">github.com/Zuhair-01/ai-security-log-analyzer</span>
+    <div class="job">
+      <div class="row"><b>Kyros</b> &mdash; deterministic AI task-routing dispatcher<time>16/16 tests passing</time></div>
+      <ul>
+        <li>Master/worker control loop where a planning model routes work to a local model fleet, serialized through a GPU mutex, with auditable tier selection.</li>
+      </ul>
     </div>
-    <ul>
-      <li>7 detection rules (brute force, impossible travel, port scan, etc.) plus local-LLM incident summaries; 12/12 tests passing.</li>
-    </ul>
-  </div>
-
-  <div class="r-entry">
-    <div class="r-head">
-      <span class="r-title">Ostazi (ostazi.sy) — Live production tutoring marketplace</span>
-      <span class="r-meta">Independent project</span>
+    <div class="job">
+      <div class="row"><b>AI Security Log Analyzer</b> &mdash; deterministic threat detection<time>12/12 tests passing</time></div>
+      <ul>
+        <li>Rule-based detection for brute force, impossible travel, and port scans; a local LLM only summarizes an already-detected incident, never the detection itself.</li>
+      </ul>
     </div>
-    <ul>
-      <li>Solo-built two-sided marketplace: phone/OTP auth, booking state machine, versioned commission ledger, deployed to production.</li>
-    </ul>
+  </section>
+
+  <div class="grid2">
+    <section>
+      <h2 class="sec">Education</h2>
+      <div class="eduline"><span><b>B.Eng., Artificial Intelligence &amp; Cybersecurity</b><br>Syrian Private University</span><time>In progress</time></div>
+    </section>
+    <section>
+      <h2 class="sec">Languages</h2>
+      <p class="facts"><div><b>Arabic</b> Native</div><div><b>English</b> IELTS 6.5 Overall</div></p>
+    </section>
   </div>
 
-  <h2>Certifications</h2>
-  <p>IELTS — 6.5 Overall</p>
+  <section>
+    <h2 class="sec">Technical Skills</h2>
+    <div class="grid2">
+      <div>
+        <div class="skillgrp"><b>AI / LLM Engineering</b><span>Local LLM deployment (Ollama), RAG pipelines, tool-calling agents, hallucination-guard design, prompt engineering</span></div>
+        <div class="skillgrp"><b>Web &amp; Product</b><span>Next.js, React, TypeScript, NestJS, Arabic RTL interfaces, auth &amp; booking flows, Vercel deployment</span></div>
+      </div>
+      <div>
+        <div class="skillgrp"><b>Data &amp; Automation</b><span>ETL pipelines, data validation and cleaning, SQL, relational modeling, Python, browser automation</span></div>
+        <div class="skillgrp"><b>Security &amp; DevOps</b><span>Threat-detection logic, secret scanning, secure configuration, Git, CI-style verification, Docker</span></div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Languages</h2>
-  <p>Arabic (native), English</p>
-</main>
-
-<footer class="print-hide">
-  <div class="wrap">
-    <p>© 2026 Zuhair.</p>
-    <ul class="foot-links">
-      <li><a href="index.html#work">All Projects</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </div>
-</footer>
+  <section>
+    <h2 class="sec">Open To</h2>
+    <p class="summary">Remote roles in AI, data, automation, growth, or content, and product builds for founders who want an idea taken to a live, working system.</p>
+  </section>
+</div>
 
 </body>
 </html>
