@@ -1,391 +1,271 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js" data-mode="hire">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Zuhair — AI Engineering, Cybersecurity & Web Building</title>
-<meta name="description" content="AI Engineering & Cybersecurity student. Multi-agent orchestration, agent tooling and security systems, two live products, a published Claude Code skill — runnable code, real tests, honest docs. Open to junior roles." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zuhair Alwazzour | Founder and AI Engineer, Damascus</title>
+<meta name="description" content="Zuhair Alwazzour is a Syrian entrepreneur and athlete based in Damascus, and the solo founder of Ostazi. Two live products, eleven systems built end to end. Open to AI roles and product builds.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="canonical" href="https://zuhair-portfolio.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zuhair Alwazzour | Founder and AI Engineer">
+<meta property="og:description" content="Two live products in Syria, eleven systems built end to end, every claim backed by a link or a test count.">
+<meta property="og:image" content="https://zuhair-portfolio.vercel.app/assets/ostazi-live.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Zuhair Alwazzour","alternateName":"زهير الوزّور","jobTitle":"Founder of Ostazi","description":"Zuhair Alwazzour (زهير الوزّور) is a Syrian entrepreneur and athlete based in Damascus, and the solo founder of Ostazi, a private tutoring platform serving students across Syria.","address":{"@type":"PostalAddress","addressLocality":"Damascus","addressCountry":"SY"},"url":"https://zuhair-portfolio.vercel.app/","sameAs":["https://github.com/Zuhair-01","https://www.linkedin.com/in/zuhairalwazzour","https://zuhairalwazzour.vercel.app"],"worksFor":{"@type":"Organization","name":"Ostazi","url":"https://www.ostazi-edu.com"}}
+</script>
 </head>
-<body>
+<body data-mode="hire">
 
-<nav class="nav">
+<header class="nav">
   <div class="wrap">
-    <a href="index.html" class="nav-logo">Zuhair<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#tools">Selected work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="resume.html">Resume</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Start a project</a>
-  </div>
-</nav>
-
-<header class="hero-clean">
-  <div class="wrap hero-clean-grid">
-    <div>
-      <span class="eyebrow"><span class="dot"></span> Open to junior AI / data / automation roles</span>
-      <h1 class="hero-title">I build systems that <span class="hl">actually run</span> — AI, data, and security.</h1>
-      <p class="hero-sub">
-        Engineering student specializing in AI &amp; Cybersecurity. I build
-        <b>multi-agent orchestration, agent tooling, and security systems</b> — plus two
-        live production products — each with runnable code, real tests, and an honest
-        account of what works and what doesn't.
-      </p>
-      <div class="hero-actions">
-        <a href="#work" class="btn btn-primary">View projects</a>
-        <a href="resume.html" class="btn btn-ghost">Resume</a>
-        <a class="btn-orbit btn-whatsapp" href="https://wa.me/963968304197" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.14-1.35a9.96 9.96 0 004.9 1.28h.01c5.52 0 10-4.48 10-10s-4.48-9.93-10.01-9.93zm0 18.15h-.01a8.3 8.3 0 01-4.24-1.16l-.3-.18-3.05.8.81-2.97-.2-.31a8.27 8.27 0 01-1.27-4.43c0-4.58 3.73-8.31 8.32-8.31 2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 012.44 5.88c0 4.58-3.73 8.24-8.38 8.24zm4.53-6.19c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14-.01-.31-.01-.47-.01a.9.9 0 00-.65.31c-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
-          <span>WhatsApp</span>
-        </a>
-      </div>
+    <a class="mark" href="#top" aria-label="Zuhair Alwazzour, top of page"><i></i><span>Zuhair Alwazzour</span></a>
+    <div class="switch" role="group" aria-label="Who are you?">
+      <span class="pill" aria-hidden="true"></span>
+      <button type="button" data-mode="hire" aria-pressed="true">Hire me</button>
+      <button type="button" data-mode="build" aria-pressed="false">Build with me</button>
     </div>
-
-    <div class="hero-panel hero-panel-lg" id="hero-term" aria-hidden="true">
-      <div class="hero-panel-dots"><span></span><span></span><span></span></div>
-      <div class="hero-panel-line"><span class="k">$</span> <span class="v">portfolio --list --verified</span></div>
-      <div class="hero-panel-line typeline">01 <span style="color:var(--green)">ostazi-edu.com ........... live production</span></div>
-      <div class="hero-panel-line typeline">02 <span style="color:var(--green)">alwazour.vercel.app ...... live client site</span></div>
-      <div class="hero-panel-line typeline">03 open-axis .............. multi-CLI control plane</div>
-      <div class="hero-panel-line typeline">04 claude-code-setup ...... 274 skills, 165 agents</div>
-      <div class="hero-panel-line typeline">05 open-pinterest ........ published CC skill</div>
-      <div class="hero-panel-line typeline">06 clip-platform ......... AI clipping SaaS</div>
-    </div>
-  </div>
-
-  <div class="wrap stats-bento">
-    <div class="stat-cell reveal"><div class="num" data-count="16" data-suffix="+">0</div><div class="lbl">Builds shipped</div></div>
-    <div class="stat-cell reveal"><div class="num" data-count="2">0</div><div class="lbl">Live products</div></div>
-    <div class="stat-cell reveal"><div class="num" data-count="10" data-suffix="+">0</div><div class="lbl">Public repos, runnable</div></div>
-    <div class="stat-cell reveal"><div class="num" data-count="57" data-suffix="/57">0</div><div class="lbl">Tests passing, documented</div></div>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a><a href="resume.html">Resume</a>
+    </nav>
   </div>
 </header>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span><b>Next.js</b> · NestJS · Postgres</span><span><b>Python</b> · Ollama · FastAPI</span><span><b>TypeScript</b> · React · Node</span>
-    <span><b>Threat detection</b> · SIEM logic</span><span><b>ETL</b> · validation · pipelines</span><span><b>CDP</b> · automation · CI</span>
-    <span><b>Next.js</b> · NestJS · Postgres</span><span><b>Python</b> · Ollama · FastAPI</span><span><b>TypeScript</b> · React · Node</span>
-    <span><b>Threat detection</b> · SIEM logic</span><span><b>ETL</b> · validation · pipelines</span><span><b>CDP</b> · automation · CI</span>
-  </div>
-</div>
-
-<main>
-<section id="work">
+<main id="top">
+<section class="hero" style="padding-top:88px">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Live products</span>
-      <h2>Two systems, running right now.</h2>
-      <p>Not mockups — real software with real users. Press a card for the actual footage.</p>
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow swap" data-hire="Founder + AI engineer / Damascus" data-build="Product builder / Damascus">Founder + AI engineer / Damascus</p>
+        <h1>
+          <span class="swap" data-hire="I ship AI systems" data-build="Your idea, built and">I ship AI systems</span>
+          <span class="swap hl" data-hire="that run in production." data-build="live on the internet.">that run in production.</span>
+        </h1>
+        <p class="lede swap" data-hire="Two live products in Syria, eleven systems built end to end, and every claim on this page has a link or a test count behind it. Engineering student in AI and cybersecurity, open to remote junior AI, data and automation roles." data-build="I built Ostazi from zero into a running tutoring marketplace, and I put Alwazour's whole Arabic catalog online for its owner. Bring me the idea. You get a live link, not a mockup.">Two live products in Syria, eleven systems built end to end, and every claim on this page has a link or a test count behind it. Engineering student in AI and cybersecurity, open to remote junior AI, data and automation roles.</p>
+        <div class="cta-row">
+          <a class="btn" data-cta href="mailto:zoherwazz6@gmail.com?subject=Role%20inquiry%20for%20Zuhair">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span class="t">Email me about a role</span>
+          </a>
+          <a class="btn ghost" href="#work"><span class="swap" data-hire="See the proof" data-build="See what I've shipped">See the proof</span></a>
+        </div>
+      </div>
+
+      <div class="stack" aria-label="Screenshots of the two live products">
+        <div class="live">LIVE NOW</div>
+        <div class="win a">
+          <div class="bar"><i></i><i></i><i></i><em>ostazi-edu.com</em></div>
+          <img src="assets/ostazi-live.png" width="762" height="484" alt="Ostazi tutoring marketplace homepage, live in production" fetchpriority="high">
+        </div>
+        <div class="win b">
+          <div class="bar"><i></i><i></i><i></i><em>alwazour.vercel.app</em></div>
+          <img src="assets/alwazour-live.png" width="762" height="484" alt="Alwazour technology-supply storefront, Arabic right-to-left catalog" loading="lazy">
+        </div>
+      </div>
     </div>
-    <div class="flag-grid">
 
-      <article class="flag-card reveal" data-shot="assets/ostazi-live.png" data-title="Ostazi — ostazi-edu.com" data-link="https://www.ostazi-edu.com" data-cta="Open the live product">
-        <div class="flag-media"><img src="assets/ostazi-live.png" alt="Ostazi homepage" loading="lazy"></div>
-        <div class="flag-body">
-          <div class="flag-top">
-            <span class="live-pill"><span class="dot"></span> LIVE PRODUCT</span>
-            <span class="flag-kicker">Two-sided marketplace</span>
-          </div>
-          <h3>Ostazi — ostazi-edu.com</h3>
-          <p>A tutoring marketplace for Syria: phone/OTP auth, a full booking state machine, versioned commission ledger, verified teachers, institute &amp; school accounts, and an admin ops panel. Built end to end — and running.</p>
-          <div class="project-stack"><span class="chip">Next.js</span><span class="chip">NestJS</span><span class="chip">Postgres</span><span class="chip">Prisma</span><span class="chip">Vercel</span></div>
-          <div class="flag-links">
-            <a href="https://www.ostazi-edu.com" target="_blank" rel="noopener" class="mini-link">visit live ↗</a>
-            <button class="mini-link as-btn" data-zoom>actual footage ⤢</button>
-          </div>
-        </div>
-      </article>
+    <div class="proof reveal">
+      <div><b>2</b><span>live products running in Syria</span></div>
+      <div><b>11</b><span>systems built end to end, below</span></div>
+      <div><b>3</b><span>projects with documented, passing test suites</span></div>
+      <div><b>1</b><span>person: design, code, deploy, support</span></div>
+    </div>
+  </div>
 
-      <article class="flag-card reveal" data-shot="assets/alwazour-live.png" data-title="Alwazour — technology supply, Damascus" data-link="https://alwazour.vercel.app" data-cta="Open the live site">
-        <div class="flag-media"><img src="assets/alwazour-live.png" alt="Alwazour homepage" loading="lazy"></div>
-        <div class="flag-body">
-          <div class="flag-top">
-            <span class="live-pill"><span class="dot"></span> LIVE PRODUCT</span>
-            <span class="flag-kicker">Client build</span>
-          </div>
-          <h3>Alwazour — technology supply</h3>
-          <p>A Damascus technology-supply business online: full Arabic RTL catalog, product inquiry flow, and a storefront the owner actually uses. Idea → live site.</p>
-          <div class="project-stack"><span class="chip">Next.js</span><span class="chip">RTL</span><span class="chip">Vercel</span></div>
-          <div class="flag-links">
-            <a href="https://alwazour.vercel.app" target="_blank" rel="noopener" class="mini-link">visit live ↗</a>
-            <button class="mini-link as-btn" data-zoom>actual footage ⤢</button>
-          </div>
-        </div>
-      </article>
-
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Next.js</span><span>NestJS</span><span>PostgreSQL</span><span>Prisma</span><span>TypeScript</span><span>React</span><span>Python</span><span>FastAPI</span><span>Ollama</span><span>SQLite</span><span>Vercel</span><span>Docker</span><span>Chrome DevTools Protocol</span><span>Arabic RTL</span><span>Threat detection</span><span>ETL pipelines</span>
+      <span>Next.js</span><span>NestJS</span><span>PostgreSQL</span><span>Prisma</span><span>TypeScript</span><span>React</span><span>Python</span><span>FastAPI</span><span>Ollama</span><span>SQLite</span><span>Vercel</span><span>Docker</span><span>Chrome DevTools Protocol</span><span>Arabic RTL</span><span>Threat detection</span><span>ETL pipelines</span>
     </div>
   </div>
 </section>
 
-<section id="tools" class="border-top" style="background:var(--bg2)">
+<section id="work">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Selected work</span>
-      <h2>Eleven systems, built end to end.</h2>
-      <p>Orchestration, agent tooling, security, data — architecture, runnable code, real tests, and an honest account of what's still missing. Press any card for the full detail.</p>
+    <p class="kicker reveal">Live products</p>
+    <h2 class="reveal">Two systems, running right now.</h2>
+    <p class="sub reveal">Open them. They are real software, not mockups.</p>
+
+    <div class="products">
+      <article class="prod reveal">
+        <a class="shot" href="https://www.ostazi-edu.com" target="_blank" rel="noopener"><img src="assets/ostazi-live.png" width="762" height="484" alt="Ostazi homepage screenshot" loading="lazy"></a>
+        <div class="body">
+          <span class="tag">Two-sided marketplace / I am the solo founder</span>
+          <h3>Ostazi</h3>
+          <p>A private tutoring platform for students across Syria. Teachers get verified, students book sessions, a booking state machine tracks every lesson, and a versioned commission ledger keeps the money side auditable. Institute and school accounts, plus an admin ops panel. Built end to end and running.</p>
+          <div class="chips"><span>Next.js</span><span>NestJS</span><span>Postgres</span><span>Prisma</span><span>Vercel</span></div>
+          <a class="more" href="https://www.ostazi-edu.com" target="_blank" rel="noopener">Visit ostazi-edu.com <span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </article>
+
+      <article class="prod reveal">
+        <a class="shot" href="https://alwazour.vercel.app" target="_blank" rel="noopener"><img src="assets/alwazour-live.png" width="762" height="484" alt="Alwazour storefront screenshot" loading="lazy"></a>
+        <div class="body">
+          <span class="tag">Client build / idea to live site</span>
+          <h3>Alwazour</h3>
+          <p>A Damascus technology-supply business, online. Full Arabic right-to-left catalog, a product inquiry flow, and a storefront the owner uses every day.</p>
+          <div class="chips"><span>Next.js</span><span>RTL</span><span>Vercel</span></div>
+          <a class="more" href="https://alwazour.vercel.app" target="_blank" rel="noopener">Visit alwazour.vercel.app <span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="systems">
+  <div class="wrap">
+    <p class="kicker reveal">Selected work</p>
+    <h2 class="reveal">Eleven systems, built end to end.</h2>
+    <p class="sub reveal">Each one has a status. The ones with tests say how many pass. What is still missing is written down too.</p>
+
+    <div class="filters reveal" role="group" aria-label="Filter projects">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="ai" aria-pressed="false">AI and agents</button>
+      <button type="button" data-f="security" aria-pressed="false">Security</button>
+      <button type="button" data-f="product" aria-pressed="false">Products</button>
+      <button type="button" data-f="data" aria-pressed="false">Data</button>
+      <button type="button" data-f="tools" aria-pressed="false">Dev tools</button>
     </div>
 
-    <div class="showcase reveal" id="showcase">
-      <div class="showcase-inner">
-        <div class="float3d" id="float3d">
-          <div class="f3d-layer f3d-main">
-            <div class="f3d-browser">
-              <div class="f3d-bar"><span class="f3d-dot"></span><span class="f3d-dot"></span><span class="f3d-dot"></span><i class="f3d-url">ostazi-edu.com</i></div>
-              <img src="assets/ostazi-live.png" alt="" loading="lazy">
-            </div>
-          </div>
-          <div class="f3d-layer f3d-back">
-            <div class="f3d-browser">
-              <div class="f3d-bar"><span class="f3d-dot"></span><span class="f3d-dot"></span><span class="f3d-dot"></span><i class="f3d-url">alwazour.vercel.app</i></div>
-              <img src="assets/alwazour-live.png" alt="" loading="lazy">
-            </div>
-          </div>
-          <div class="f3d-layer f3d-term">
-            <div class="hero-panel">
-              <div class="hero-panel-dots"><span></span><span></span><span></span></div>
-              <div class="hero-panel-line"><span class="k">$</span> <span class="v">git push origin master</span></div>
-              <div class="hero-panel-line" style="color:var(--green)">deployed to production</div>
-            </div>
-          </div>
-          <div class="f3d-chip f3d-c1">Next.js</div>
-          <div class="f3d-chip f3d-c2">Python</div>
-          <div class="f3d-chip f3d-c3">CDP</div>
+    <div class="grid">
+      <article class="card reveal" data-cat="ai tools" data-o-hire="1" data-o-build="8">
+        <img src="assets/open-axis.png" width="762" height="484" alt="Open Axis routing engine" loading="lazy">
+        <div class="in"><span class="proofline">45/45 tests</span><h3>Open Axis</h3>
+          <p>Routes engineering tasks across Claude Code, OpenCode and Codex. Capability-tier routing, deterministic fallback, durable task state. A tool I use daily, not a demo.</p>
+          <a class="more" href="projects/open-axis.html">Read the case study <span aria-hidden="true">&rarr;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="ai" data-o-hire="2" data-o-build="9">
+        <img src="assets/kyros.png" width="762" height="484" alt="Kyros multi-agent control loop" loading="lazy">
+        <div class="in"><span class="proofline">16/16 tests</span><h3>Kyros</h3>
+          <p>A master and worker control loop. Claude plans and routes, a local Ollama fleet executes, and a GPU mutex serialises the hardware. Tier selection is auditable.</p>
+          <a class="more" href="https://github.com/Zuhair-01/kyros" target="_blank" rel="noopener">See the repo <span aria-hidden="true">&#8599;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="security ai" data-o-hire="3" data-o-build="11">
+        <img src="assets/ai-security-log-analyzer.png" width="762" height="484" alt="AI Security Log Analyzer" loading="lazy">
+        <div class="in"><span class="proofline">12/12 tests</span><h3>AI Security Log Analyzer</h3>
+          <p>Deterministic detection for brute force, impossible travel and port scans. Rules run first, a local LLM writes the incident summary second, never the other way round.</p>
+          <a class="more" href="projects/ai-security-log-analyzer.html">Read the case study <span aria-hidden="true">&rarr;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="ai tools" data-o-hire="4" data-o-build="10">
+        <img src="assets/claude-code-setup-banner.svg" width="762" height="484" alt="claude-code-setup banner" loading="lazy">
+        <div class="in"><span class="proofline">Public, in daily use</span><h3>claude-code-setup</h3>
+          <p>A working Claude Code environment: 274 skills, 165 agents and a 10,000-item offline capability index that stays off-context until searched. Routing, hooks and a security build gate wired in.</p>
+          <a class="more" href="https://github.com/Zuhair-01/claude-code-setup" target="_blank" rel="noopener">See the repo <span aria-hidden="true">&#8599;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="ai data" data-o-hire="5" data-o-build="7">
+        <img src="assets/ai-contract-intelligence.png" width="762" height="484" alt="AI Contract Intelligence" loading="lazy">
+        <div class="in"><span class="proofline">Zero paid API keys</span><h3>AI Contract Intelligence</h3>
+          <p>Local-LLM contract extraction that reports missing fields honestly instead of guessing.</p>
+          <a class="more" href="projects/ai-contract-intelligence.html">Read the case study <span aria-hidden="true">&rarr;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="ai data" data-o-hire="6" data-o-build="6">
+        <img src="assets/enterprise-ai-assistant.png" width="762" height="484" alt="Enterprise AI Assistant" loading="lazy">
+        <div class="in"><span class="proofline">Local Ollama + SQLite</span><h3>Enterprise AI Assistant</h3>
+          <p>Answers business questions only from executed SQL results. Hallucination-guarded by construction, not just by prompting.</p>
+          <a class="more" href="projects/enterprise-ai-assistant.html">Read the case study <span aria-hidden="true">&rarr;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="tools ai" data-o-hire="7" data-o-build="5">
+        <img src="assets/chrome-agent-bridge.png" width="762" height="484" alt="chrome-agent-bridge" loading="lazy">
+        <div class="in"><span class="proofline">Live tool</span><h3>chrome-agent-bridge</h3>
+          <p>Universal Chrome control for any AI agent. Raw CDP command line, no extension, watchdog-bounded verbs. Works with OpenCode, Codex and Claude.</p>
+          <a class="more" href="https://zuhair-01.github.io/chrome-agent-bridge/" target="_blank" rel="noopener">Open the project <span aria-hidden="true">&#8599;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="product ai" data-o-hire="8" data-o-build="1">
+        <img src="assets/clip-platform-banner.svg" width="762" height="484" alt="clip-platform banner" loading="lazy">
+        <div class="in"><span class="proofline">Private, production build</span><h3>clip-platform</h3>
+          <p>Turns long videos into short vertical clips. An attention-ranking engine, GPU transcription with an NVENC fallback, multi-speaker cutting. FastAPI and Next.js.</p>
+          <a class="more" href="https://wa.me/963968304197?text=Hi%20Zuhair%2C%20I%20would%20like%20a%20walkthrough%20of%20clip-platform." target="_blank" rel="noopener">Ask for a walkthrough <span aria-hidden="true">&#8599;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="tools" data-o-hire="9" data-o-build="4">
+        <img src="assets/open-pinterest-banner.svg" width="762" height="484" alt="open-pinterest banner" loading="lazy">
+        <div class="in"><span class="proofline">Published plugin</span><h3>open-pinterest</h3>
+          <p>A Claude Code skill and installable plugin. Finds, judges and downloads real design and motion references, cuts out subjects, and wires them into a frontend build.</p>
+          <a class="more" href="https://github.com/Zuhair-01/open-pinterest" target="_blank" rel="noopener">See the repo <span aria-hidden="true">&#8599;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="data" data-o-hire="10" data-o-build="3">
+        <img src="assets/enterprise-bi-platform.png" width="762" height="484" alt="Enterprise BI Platform" loading="lazy">
+        <div class="in"><span class="proofline">Documented pipeline</span><h3>Enterprise BI Platform</h3>
+          <p>An executive dashboard on top of a real CSV validation, cleaning and transform pipeline. Not static chart mockups.</p>
+          <a class="more" href="projects/enterprise-bi-platform.html">Read the case study <span aria-hidden="true">&rarr;</span></a></div>
+      </article>
+      <article class="card reveal" data-cat="product data" data-o-hire="11" data-o-build="2">
+        <img src="assets/nabd.png" width="762" height="484" alt="Nabd sales intelligence" loading="lazy">
+        <div class="in"><span class="proofline">Archived, complete</span><h3>Nabd</h3>
+          <p>A free-first B2B sales-intelligence engine. Buying-signal detection, ICP company discovery, transparent scoring and outreach drafting, with zero paid APIs.</p>
+          <a class="more" href="https://github.com/Zuhair-01/nabd" target="_blank" rel="noopener">See the repo <span aria-hidden="true">&#8599;</span></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <p class="kicker reveal">How I work</p>
+    <h2 class="reveal"><span class="swap" data-hire="Small scope, real tests, honest status." data-build="Idea in, live link out.">Small scope, real tests, honest status.</span></h2>
+    <div class="two">
+      <div class="panel reveal">
+        <h3>The process</h3>
+        <ol class="steps">
+          <li><div><b><span class="swap" data-hire="Read the problem" data-build="You tell me the idea">Read the problem</span></b><span class="swap" data-hire="I trace the whole flow before I touch code, so the fix lands in the right place." data-build="One WhatsApp message is enough. I ask the questions that matter and skip the rest.">I trace the whole flow before I touch code, so the fix lands in the right place.</span></div></li>
+          <li><div><b><span class="swap" data-hire="Build the smallest thing that works" data-build="I build a real first version">Build the smallest thing that works</span></b><span class="swap" data-hire="Then I leave a runnable check behind: a test, an assert, a demo script." data-build="You see a working screen early, not a slide deck, and you tell me what is wrong.">Then I leave a runnable check behind: a test, an assert, a demo script.</span></div></li>
+          <li><div><b>Ship it and write down the status</b><span>Live link, what works, what does not yet. No hiding the gaps.</span></div></li>
+          <li><div><b>Keep it running</b><span>I run Ostazi myself, so I know what happens after launch day.</span></div></li>
+        </ol>
+      </div>
+      <div class="panel reveal">
+        <h3>What each build exercised</h3>
+        <div class="skills">
+          <div><h4>AI and LLM engineering</h4><p>Local LLM deployment with Ollama, RAG pipelines, tool-calling agents, hallucination-guard design.</p></div>
+          <div><h4>Web and product</h4><p>Next.js, React, TypeScript, Arabic RTL storefronts, auth, bookings, deployment on Vercel.</p></div>
+          <div><h4>Data and automation</h4><p>ETL pipelines, validation and cleaning, SQL and relational modeling, Python, browser automation.</p></div>
+          <div><h4>Security and DevOps</h4><p>Threat-detection logic, secret scanning, secure config, Git, CI-style verification, Docker.</p></div>
         </div>
       </div>
-      <p class="showcase-caption">Real workflow: code → tests → deployed. Move your cursor over it. Not a mockup.</p>
     </div>
-
-    <div class="sw-grid">
-      <article class="sw-card reveal" data-project="open-axis">
-        <button class="sw-expand" data-project-trigger="open-axis" aria-label="View Open Axis in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/open-axis-banner.svg" alt="Open Axis" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">AI ORCHESTRATION</span>
-          <h3>Open Axis</h3>
-          <p>Routes engineering tasks across Claude Code, OpenCode, and Codex — capability-tier routing, deterministic fallback, durable task state. A tool used daily, not a demo.</p>
-          <div class="sw-meta"><span class="sw-tests">45/45 tests</span></div>
-          <div class="project-stack"><span class="chip">Python</span><span class="chip">SQLite</span></div>
-          <a href="projects/open-axis.html" class="mini-link sw-link">Read case study →</a>
-        </div>
-      </article>
-
-      <article class="sw-card reveal" data-project="kyros">
-        <button class="sw-expand" data-project-trigger="kyros" aria-label="View Kyros in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/kyros-banner.svg" alt="Kyros" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">MULTI-AGENT ROUTING</span>
-          <h3>Kyros</h3>
-          <p>Master/worker control loop — Claude plans and routes, a local Ollama fleet executes, a GPU mutex serialises the hardware. Auditable tier selection, zero dependencies.</p>
-          <div class="sw-meta"><span class="sw-tests">16/16 tests</span></div>
-          <div class="project-stack"><span class="chip">Python</span><span class="chip">Ollama</span></div>
-          <a href="https://github.com/Zuhair-01/kyros" target="_blank" rel="noopener" class="mini-link sw-link">Repo ↗</a>
-        </div>
-      </article>
-
-      <article class="sw-card reveal" data-project="claude-code-setup">
-        <button class="sw-expand" data-project-trigger="claude-code-setup" aria-label="View claude-code-setup in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/claude-code-setup-banner.svg" alt="claude-code-setup" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">AGENT INFRASTRUCTURE</span>
-          <h3>claude-code-setup</h3>
-          <p>A real working Claude Code environment — 274 skills, 165 agents, and a 10k-item offline capability index that stays off-context until searched. Routing, hooks, and a security build gate wired in.</p>
-          <div class="sw-meta"><span class="sw-tests">Public · in daily use</span></div>
-          <div class="project-stack"><span class="chip">JavaScript</span><span class="chip">Python</span></div>
-          <a href="https://github.com/Zuhair-01/claude-code-setup" target="_blank" rel="noopener" class="mini-link sw-link">Repo ↗</a>
-        </div>
-      </article>
-
-      <article class="sw-card reveal" data-project="open-pinterest">
-        <button class="sw-expand" data-project-trigger="open-pinterest" aria-label="View open-pinterest in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/open-pinterest-banner.svg" alt="open-pinterest" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">PUBLISHED CC SKILL</span>
-          <h3>open-pinterest</h3>
-          <p>A Claude Code skill + installable plugin — find, evaluate and download real design/UI/motion references (images and video), cut out subjects, and wire them into a frontend build.</p>
-          <div class="sw-meta"><span class="sw-tests">Published plugin</span></div>
-          <div class="project-stack"><span class="chip">Python</span><span class="chip">Claude Code</span></div>
-          <a href="https://github.com/Zuhair-01/open-pinterest" target="_blank" rel="noopener" class="mini-link sw-link">Repo ↗</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="sw-grid">
-      <article class="sw-card reveal" data-project="chrome-agent-bridge">
-        <button class="sw-expand" data-project-trigger="chrome-agent-bridge" aria-label="View chrome-agent-bridge in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/chrome-agent-bridge-banner.svg" alt="chrome-agent-bridge" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">AGENT TOOLING</span>
-          <h3>chrome-agent-bridge</h3>
-          <p>Universal Chrome control for any AI agent — raw CDP CLI, zero extensions, watchdog-bounded verbs. OpenCode, Codex, Claude ready.</p>
-          <div class="sw-meta"><span class="sw-tests">Live tool</span></div>
-          <div class="project-stack"><span class="chip">TypeScript</span><span class="chip">CDP</span></div>
-          <a href="https://zuhair-01.github.io/chrome-agent-bridge/" target="_blank" rel="noopener" class="mini-link sw-link">Visit project ↗</a>
-        </div>
-      </article>
-
-      <article class="sw-card reveal" data-project="clip-platform">
-        <button class="sw-expand" data-project-trigger="clip-platform" aria-label="View clip-platform in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/clip-platform-banner.svg" alt="clip-platform" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">AI VIDEO SAAS</span>
-          <h3>clip-platform</h3>
-          <p>Turns long videos into short vertical clips — an attention-intelligence ranking engine, GPU-accelerated transcription with an NVENC fallback, multi-speaker cutting. FastAPI + Next.js.</p>
-          <div class="sw-meta"><span class="sw-tests">Private · production build</span></div>
-          <div class="project-stack"><span class="chip">TypeScript</span><span class="chip">FastAPI</span><span class="chip">Whisper</span></div>
-          <a href="#contact" class="mini-link sw-link">Ask for a walkthrough →</a>
-        </div>
-      </article>
-
-      <article class="sw-card reveal" data-project="nabd">
-        <button class="sw-expand" data-project-trigger="nabd" aria-label="View Nabd in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/nabd-banner.svg" alt="Nabd" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">SALES INTELLIGENCE</span>
-          <h3>Nabd</h3>
-          <p>Free-first B2B sales-intelligence engine — buying-signal detection, ICP-based company discovery, transparent scoring, outreach drafting. Zero paid APIs.</p>
-          <div class="sw-meta"><span class="sw-tests">Archived · complete</span></div>
-          <div class="project-stack"><span class="chip">TypeScript</span><span class="chip">Postgres</span></div>
-          <a href="https://github.com/Zuhair-01/nabd" target="_blank" rel="noopener" class="mini-link sw-link">Repo ↗</a>
-        </div>
-      </article>
-
-      <article class="sw-card reveal" data-project="ai-security-log-analyzer">
-        <button class="sw-expand" data-project-trigger="ai-security-log-analyzer" aria-label="View Security Log Analyzer in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/ai-security-log-analyzer-banner.svg" alt="AI Security Log Analyzer" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">CYBERSECURITY</span>
-          <h3>AI Security Log Analyzer</h3>
-          <p>Deterministic detection engine for brute force, impossible travel, and port scans — deterministic rules first, local-LLM incident summary second, never the reverse.</p>
-          <div class="sw-meta"><span class="sw-tests">12/12 tests</span></div>
-          <div class="project-stack"><span class="chip">Next.js</span><span class="chip">Python</span></div>
-          <a href="projects/ai-security-log-analyzer.html" class="mini-link sw-link">Read case study →</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="sw-grid sw-grid-sm">
-      <article class="sw-card reveal" data-project="enterprise-bi-platform">
-        <button class="sw-expand" data-project-trigger="enterprise-bi-platform" aria-label="View Enterprise BI Platform in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/enterprise-bi-platform-banner.svg" alt="Enterprise BI Platform" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">DATA / BI</span>
-          <h3>Enterprise BI Platform</h3>
-          <p>Executive dashboard backed by a real CSV validation/cleaning/transform pipeline over synthetic enterprise data — not static chart mockups.</p>
-          <div class="sw-meta"><span class="sw-tests">Documented pipeline</span></div>
-          <div class="project-stack"><span class="chip">Next.js</span><span class="chip">Python</span></div>
-          <a href="projects/enterprise-bi-platform.html" class="mini-link sw-link">Read case study →</a>
-        </div>
-      </article>
-
-      <article class="sw-card reveal" data-project="ai-contract-intelligence">
-        <button class="sw-expand" data-project-trigger="ai-contract-intelligence" aria-label="View AI Contract Intelligence in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/ai-contract-intelligence-banner.svg" alt="AI Contract Intelligence" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">DOCUMENT INTELLIGENCE</span>
-          <h3>AI Contract Intelligence</h3>
-          <p>Local-LLM contract extraction that reports missing fields honestly instead of guessing. Zero paid API keys.</p>
-          <div class="sw-meta"><span class="sw-tests">Ollama · FastAPI</span></div>
-          <div class="project-stack"><span class="chip">Ollama</span><span class="chip">FastAPI</span></div>
-          <a href="projects/ai-contract-intelligence.html" class="mini-link sw-link">Read case study →</a>
-        </div>
-      </article>
-
-      <article class="sw-card reveal" data-project="enterprise-ai-assistant">
-        <button class="sw-expand" data-project-trigger="enterprise-ai-assistant" aria-label="View Enterprise AI Assistant in detail">⤢</button>
-        <div class="sw-banner"><img src="assets/enterprise-ai-assistant-banner.svg" alt="Enterprise AI Assistant" loading="lazy"><span class="sw-live-dot"></span></div>
-        <div class="sw-content">
-          <span class="sw-tag">AI ASSISTANT</span>
-          <h3>Enterprise AI Assistant</h3>
-          <p>Answers business questions only from executed SQL results — hallucination-guarded by construction, not just prompting.</p>
-          <div class="sw-meta"><span class="sw-tests">Ollama · SQLite</span></div>
-          <div class="project-stack"><span class="chip">Ollama</span><span class="chip">SQLite</span></div>
-          <a href="projects/enterprise-ai-assistant.html" class="mini-link sw-link">Read case study →</a>
-        </div>
-      </article>
-    </div>
-
-    <p class="more-line reveal">Also shipped: <a href="https://alwazour-studio.vercel.app" target="_blank" rel="noopener">alwazour-studio</a> (agency site — Astro, bilingual RTL, admin panel), <a href="https://github.com/Zuhair-01/personal-brand-engine" target="_blank" rel="noopener">personal-brand-engine</a>, and <a href="https://github.com/Zuhair-01?tab=repositories" target="_blank" rel="noopener">the full workshop →</a></p>
   </div>
 </section>
 
 <section id="about">
-  <div class="wrap about-grid">
-    <div class="reveal">
-      <div class="section-head" style="margin-bottom:20px">
-        <h2>From idea to running software.</h2>
-      </div>
-      <p>
-        I'm an engineering student specializing in Artificial Intelligence and Cybersecurity at
-        Syrian Private University (SPU). I build complete systems — architecture, code, tests,
-        deployment — and I document what works and what doesn't instead of hiding it.
-      </p>
-      <p>
-        Two of those systems are live products with real users. I also take ideas from people and
-        turn them into real websites — like Alwazour above. If you have an idea, that's the job I
-        enjoy most.
-      </p>
-    </div>
-    <ul class="fact-list reveal">
-      <li><span class="fk">Education</span><span class="fv">Syrian Private University (SPU) — Engineering, AI &amp; Cybersecurity</span></li>
-      <li><span class="fk">Open to</span><span class="fv">Junior AI / data / automation roles — and website &amp; product builds from your idea</span></li>
-      <li><span class="fk">Languages</span><span class="fv">Arabic (native), English — IELTS 6.5 Overall</span></li>
-      <li><span class="fk">Location</span><span class="fv">Syria · remote-friendly</span></li>
-    </ul>
-  </div>
-</section>
-
-<section id="skills" class="border-top" style="background:var(--bg2)">
   <div class="wrap">
-    <div class="section-head reveal">
-      <h2>Skills each build actually exercised.</h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card reveal"><h4>AI / LLM Engineering</h4><ul>
-        <li>Local LLM deployment (Ollama)</li><li>RAG pipelines</li><li>Tool-calling agents</li>
-        <li>Hallucination-guard design</li><li>Prompt engineering</li></ul></div>
-      <div class="skill-card reveal"><h4>Web &amp; Product Building</h4><ul>
-        <li>Next.js, React, TypeScript</li><li>Arabic RTL storefronts</li><li>Auth, bookings, payments flow</li>
-        <li>Vercel deploys &amp; domains</li></ul></div>
-      <div class="skill-card reveal"><h4>Data &amp; Automation</h4><ul>
-        <li>ETL / data pipelines</li><li>Data validation &amp; cleaning</li><li>SQL, relational modeling</li>
-        <li>Python (pandas, stdlib)</li></ul></div>
-      <div class="skill-card reveal"><h4>Security &amp; DevOps</h4><ul>
-        <li>Threat detection logic</li><li>Secret scanning / secure config</li><li>Git, CI-style verification</li>
-        <li>Docker, browser automation</li></ul></div>
+    <p class="kicker reveal">About</p>
+    <h2 class="reveal">A solo founder who also writes the code.</h2>
+    <div class="about">
+      <dl class="facts reveal">
+        <div><dt>Based</dt><dd>Damascus, Syria. Remote-friendly.</dd></div>
+        <div><dt>Running</dt><dd>Ostazi, as solo founder</dd></div>
+        <div><dt>Studying</dt><dd>Engineering, AI and Cybersecurity, Syrian Private University</dd></div>
+        <div><dt>Languages</dt><dd>Arabic (native), English (IELTS 6.5 overall)</dd></div>
+        <div><dt>Also</dt><dd>Athlete</dd></div>
+        <div><dt>Open to</dt><dd><span class="swap" data-hire="Remote junior AI, data and automation roles" data-build="Building your website or product from scratch">Remote junior AI, data and automation roles</span></dd></div>
+      </dl>
+      <div class="reveal">
+        <p>Zuhair Alwazzour (زهير الوزّور) is a Syrian entrepreneur and athlete based in Damascus, and the solo founder of Ostazi, a private tutoring platform serving students across Syria.</p>
+        <p>I build the whole thing myself: the database, the backend, the interface, the deployment and the support inbox. That is why the projects above come with a status. I know what breaks after launch because I am the one who gets the message.</p>
+        <p>If you have an idea, or a role, the fastest way to reach me is below.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="wrap">
-    <div class="contact-box reveal">
-      <h2>Have an idea? Let's make it real.</h2>
-      <p>Junior AI / data / automation roles, or a website you want built from scratch — fastest ways to reach me:</p>
-      <div class="orbit-row">
-        <a class="btn-orbit btn-whatsapp" href="https://wa.me/963968304197" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.14-1.35a9.96 9.96 0 004.9 1.28h.01c5.52 0 10-4.48 10-10s-4.48-9.93-10.01-9.93zm0 18.15h-.01a8.3 8.3 0 01-4.24-1.16l-.3-.18-3.05.8.81-2.97-.2-.31a8.27 8.27 0 01-1.27-4.43c0-4.58 3.73-8.31 8.32-8.31 2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 012.44 5.88c0 4.58-3.73 8.24-8.38 8.24zm4.53-6.19c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14-.01-.31-.01-.47-.01a.9.9 0 00-.65.31c-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
-          <span>WhatsApp</span>
+    <div class="contact reveal">
+      <p class="kicker">Contact</p>
+      <h2><span class="swap" data-hire="Hiring for AI, data or automation? Let's talk." data-build="Have an idea? Send me one sentence.">Hiring for AI, data or automation? Let's talk.</span></h2>
+      <div class="cta-row">
+        <a class="btn" data-cta href="mailto:zoherwazz6@gmail.com?subject=Role%20inquiry%20for%20Zuhair">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <span class="t">Email me about a role</span>
         </a>
-        <a class="btn-orbit btn-email" href="mailto:zoherwazz6@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          <span>zoherwazz6@gmail.com</span>
-        </a>
-        <a class="btn-orbit btn-github" href="https://github.com/Zuhair-01" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0022 12.19C22 6.58 17.52 2 12 2z"/></svg>
-          <span>github.com/Zuhair-01</span>
-        </a>
-        <a class="btn-orbit btn-linkedin" href="https://www.linkedin.com/in/zuhairalwazzour" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/></svg>
-          <span>Zuhair Wazz</span>
-        </a>
+        <button type="button" class="btn ghost copy" aria-label="Copy email address">zoherwazz6@gmail.com</button>
       </div>
+      <p class="ps" data-only="hire"><b>P.S.</b> Not sure yet? Read the <a href="projects/open-axis.html" style="text-decoration:underline">Open Axis case study</a>. It shows how I work: the tests, the trade-offs, and what is still not done.</p>
+      <p class="ps" data-only="build"><b>P.S.</b> One sentence about what you want built is enough to start. I will reply with the first questions.</p>
     </div>
   </div>
 </section>
@@ -393,233 +273,17 @@
 
 <footer>
   <div class="wrap">
-    <p>© 2026 Zuhair Alwazzour · Damascus · <a href="https://zuhairalwazzour.vercel.app" target="_blank" rel="noopener" style="color:var(--text-dim)">zuhairalwazzour.vercel.app</a> · <a href="resume.html" style="color:var(--text-dim)">Resume</a></p>
-    <div class="orbit-row" style="justify-content:flex-end">
-      <a class="btn-orbit sm btn-whatsapp" href="https://wa.me/963968304197" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.14-1.35a9.96 9.96 0 004.9 1.28h.01c5.52 0 10-4.48 10-10s-4.48-9.93-10.01-9.93zm0 18.15h-.01a8.3 8.3 0 01-4.24-1.16l-.3-.18-3.05.8.81-2.97-.2-.31a8.27 8.27 0 01-1.27-4.43c0-4.58 3.73-8.31 8.32-8.31 2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 012.44 5.88c0 4.58-3.73 8.24-8.38 8.24zm4.53-6.19c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14-.01-.31-.01-.47-.01a.9.9 0 00-.65.31c-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
-        <span>WhatsApp</span>
-      </a>
-      <a class="btn-orbit sm btn-github" href="https://github.com/Zuhair-01" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0022 12.19C22 6.58 17.52 2 12 2z"/></svg>
-        <span>GitHub</span>
-      </a>
-      <a class="btn-orbit sm btn-linkedin" href="https://www.linkedin.com/in/zuhairalwazzour" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/></svg>
-        <span>LinkedIn</span>
-      </a>
-    </div>
+    <span>&copy; 2026 Zuhair Alwazzour. Damascus.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://github.com/Zuhair-01" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/zuhairalwazzour" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://wa.me/963968304197" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://zuhairalwazzour.vercel.app" target="_blank" rel="noopener">Profile</a>
+      <a href="resume.html">Resume</a>
+    </nav>
   </div>
 </footer>
 
-<!-- real-footage lightbox (flagship products) -->
-<div class="lightbox" id="lightbox" hidden>
-  <div class="lb-backdrop" data-close></div>
-  <figure class="lb-panel">
-    <figcaption class="lb-head">
-      <strong id="lb-title"></strong>
-      <div class="lb-actions">
-        <a id="lb-link" class="mini-link" target="_blank" rel="noopener"></a>
-        <button class="mini-link as-btn" data-close>close ✕</button>
-      </div>
-    </figcaption>
-    <img id="lb-img" src="" alt="Project footage">
-  </figure>
-</div>
-
-<!-- project detail modal: generated mini-poster + full description -->
-<div class="lightbox" id="project-modal" hidden>
-  <div class="lb-backdrop" data-close></div>
-  <div class="lb-panel pm-panel">
-    <button class="pm-close" data-close aria-label="Close">✕</button>
-    <div id="pm-poster" class="pm-poster"></div>
-    <div class="pm-body">
-      <span class="sw-tag" id="pm-tag"></span>
-      <h3 id="pm-title"></h3>
-      <p id="pm-desc"></p>
-      <div class="project-stack" id="pm-stack"></div>
-      <div class="pm-links" id="pm-links"></div>
-    </div>
-  </div>
-</div>
-
-<script>
-// scroll reveal
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// real-footage lightbox: flagship [data-shot] cards
-(function(){
-  const lb=document.getElementById('lightbox'),img=document.getElementById('lb-img'),
-        title=document.getElementById('lb-title'),link=document.getElementById('lb-link');
-  function open(el){
-    img.src=el.dataset.shot;title.textContent=el.dataset.title||'';
-    link.href=el.dataset.link||'#';link.textContent=el.dataset.cta||'open';
-    lb.hidden=false;document.body.style.overflow='hidden';
-  }
-  function close(){lb.hidden=true;document.body.style.overflow='';}
-  document.querySelectorAll('[data-shot]').forEach(el=>{
-    el.addEventListener('click',e=>{
-      if(e.target.closest('a')&&e.target.closest('a')!==el)return;
-      e.preventDefault();open(el);
-    });
-  });
-  lb.addEventListener('click',e=>{if(e.target.hasAttribute('data-close'))close();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!lb.hidden)close();});
-})();
-
-// hero terminal: looping line-by-line typewriter reveal with a trailing cursor
-(function(){
-  const term=document.getElementById('hero-term');if(!term)return;
-  const lines=[...term.querySelectorAll('.typeline')];
-  if(!lines.length)return;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const cursor=document.createElement('span');cursor.className='cursor';
-  let i=0;
-  function tick(){
-    if(i<lines.length){
-      lines[i].classList.add('shown');
-      lines[i].appendChild(cursor);
-      i++;
-      setTimeout(tick,420);
-    }else{
-      setTimeout(()=>{
-        lines.forEach(l=>l.classList.remove('shown'));
-        i=0;setTimeout(tick,500);
-      },1800);
-    }
-  }
-  tick();
-})();
-
-// showcase: reactive tilt, scoped to hovering the component itself only
-(function(){
-  const box=document.getElementById('showcase'),stage=document.getElementById('float3d');
-  if(!box||!stage)return;
-  if(matchMedia('(pointer: coarse)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  box.addEventListener('mousemove',e=>{
-    const r=box.getBoundingClientRect();
-    const px=((e.clientX-r.left)/r.width-.5)*2, py=((e.clientY-r.top)/r.height-.5)*2;
-    stage.style.setProperty('--rx',(-py*5).toFixed(2)+'deg');
-    stage.style.setProperty('--ry',(px*7).toFixed(2)+'deg');
-  });
-  box.addEventListener('mouseleave',()=>{stage.style.setProperty('--rx','0deg');stage.style.setProperty('--ry','0deg');});
-})();
-
-// project detail modal: generated mini-poster (no screenshots)
-(function(){
-  const PROJECTS={
-    'open-axis':{tag:'AI ORCHESTRATION',title:'Open Axis',
-      desc:'A local control plane that routes engineering tasks across Claude Code, OpenCode, and Codex by capability tier, with deterministic fallback and durable task state. Used daily, not a demo.',
-      stack:['Python','SQLite'],nav:['Engines','Routing','State'],badge:'v1.0 — multi-CLI orchestration',
-      headline:'Route any task to the <span class="pm-accent">right AI engine</span>.',
-      sub:'Capability-tier routing, deterministic fallback, durable state.',
-      links:[{href:'projects/open-axis.html',label:'Read full case study →'},{href:'https://github.com/Zuhair-01/open-axis',label:'Repo ↗',ext:true}]},
-    'chrome-agent-bridge':{tag:'AGENT TOOLING',title:'chrome-agent-bridge',
-      desc:'Universal Chrome control for any AI agent — a raw CDP CLI with zero browser extensions and watchdog-bounded verbs. Built for OpenCode, Codex, and Claude alike.',
-      stack:['TypeScript','CDP'],nav:['Features','Agents','Compare'],badge:'v0.1 — works headless or headed',
-      headline:'Give any AI agent <span class="pm-accent">a real browser</span>.',
-      sub:'Raw CDP CLI, zero extensions, watchdog-bounded verbs.',
-      links:[{href:'https://zuhair-01.github.io/chrome-agent-bridge/',label:'Visit live project ↗',ext:true},{href:'https://github.com/Zuhair-01/chrome-agent-bridge',label:'Repo ↗',ext:true}]},
-    'ai-security-log-analyzer':{tag:'CYBERSECURITY',title:'AI Security Log Analyzer',
-      desc:'A deterministic detection engine that flags brute force, impossible travel, and port scans from raw logs, then hands off to a local LLM for plain-language incident summaries.',
-      stack:['Next.js','Python'],nav:['Detectors','Rules','Reports'],badge:'12/12 tests passing',
-      headline:'Catch the attack, <span class="pm-accent">skip the noise</span>.',
-      sub:'Deterministic rules first, LLM summary second — never the reverse.',
-      links:[{href:'projects/ai-security-log-analyzer.html',label:'Read full case study →'},{href:'https://github.com/Zuhair-01/ai-security-log-analyzer',label:'Repo ↗',ext:true}]},
-    'enterprise-bi-platform':{tag:'DATA / BUSINESS INTELLIGENCE',title:'Enterprise BI Platform',
-      desc:'An executive dashboard backed by a real CSV validation, cleaning, and transform pipeline running over synthetic enterprise data — not static chart mockups.',
-      stack:['Next.js','Python'],nav:['Pipeline','Dashboards','Data'],badge:'Documented data pipeline',
-      headline:'Raw CSVs in, <span class="pm-accent">an executive dashboard</span> out.',
-      sub:'Validation → cleaning → transform, all inspectable.',
-      links:[{href:'projects/enterprise-bi-platform.html',label:'Read full case study →'},{href:'https://github.com/Zuhair-01/enterprise-bi-platform',label:'Repo ↗',ext:true}]},
-    'ai-contract-intelligence':{tag:'DOCUMENT INTELLIGENCE',title:'AI Contract Intelligence',
-      desc:'Local-LLM contract extraction that reports missing fields honestly instead of guessing at them — no paid API keys required.',
-      stack:['Ollama','FastAPI'],nav:['Extract','Review','Flags'],badge:'Zero paid API keys',
-      headline:'Read the contract. <span class="pm-accent">Flag what\'s missing.</span>',
-      sub:'Honest gaps, not confident hallucinations.',
-      links:[{href:'projects/ai-contract-intelligence.html',label:'Read full case study →'},{href:'https://github.com/Zuhair-01/ai-contract-intelligence',label:'Repo ↗',ext:true}]},
-    'enterprise-ai-assistant':{tag:'AI ASSISTANT',title:'Enterprise AI Assistant',
-      desc:'Answers business questions only from executed SQL results against the real database — hallucination-guarded by construction, not just by prompting.',
-      stack:['Ollama','SQLite'],nav:['Ask','Query','Guardrails'],badge:'Grounded in real SQL',
-      headline:'Answers backed by <span class="pm-accent">real SQL</span>, not guesses.',
-      sub:'Every answer traces back to an executed query.',
-      links:[{href:'projects/enterprise-ai-assistant.html',label:'Read full case study →'},{href:'https://github.com/Zuhair-01/enterprise-ai-assistant',label:'Repo ↗',ext:true}]},
-    'kyros':{tag:'TASK ROUTING',title:'Kyros',
-      desc:'A deterministic task-routing dispatcher with a GPU mutex for local/cloud AI model orchestration — auditable tier selection, zero dependencies, 16/16 tests.',
-      stack:['Python','Ollama'],nav:['Dispatch','GPU Lock','Tiers'],badge:'16/16 tests — zero dependencies',
-      headline:'Route the task. <span class="pm-accent">Lock the GPU.</span>',
-      sub:'Deterministic tier selection for local/cloud AI orchestration.',
-      links:[{href:'https://github.com/Zuhair-01/kyros',label:'Repo ↗',ext:true}]},
-    'nabd':{tag:'SALES INTELLIGENCE',title:'Nabd',
-      desc:'A free-first B2B sales-intelligence engine — buying-signal detection, ICP-based company discovery, transparent scoring, and outreach drafting. Zero paid APIs. Archived after completion; code intact.',
-      stack:['TypeScript','Postgres'],nav:['Signals','Scoring','Outreach'],badge:'Archived — code complete',
-      headline:'Buying signals, <span class="pm-accent">zero paid APIs</span>.',
-      sub:'ICP discovery, transparent scoring, outreach drafting.',
-      links:[{href:'https://github.com/Zuhair-01/nabd',label:'Repo ↗',ext:true}]},
-    'claude-code-setup':{tag:'AGENT INFRASTRUCTURE',title:'claude-code-setup',
-      desc:'A real, working Claude Code environment — 274 skills, 165 agents, and a 10k-item offline capability index (OVERSEER) that stays off-context until searched. Skill routing, lifecycle hooks, and a build-time security gate are wired in. Not a curated list — the setup actually in daily use.',
-      stack:['JavaScript','Python','Claude Code'],nav:['Skills','Agents','OVERSEER'],badge:'Public — in daily use',
-      headline:'A Claude Code setup that <span class="pm-accent">actually runs</span>.',
-      sub:'274 skills, 165 agents, a 10k-item off-context index.',
-      links:[{href:'https://github.com/Zuhair-01/claude-code-setup',label:'Repo ↗',ext:true}]},
-    'open-pinterest':{tag:'PUBLISHED CC SKILL',title:'open-pinterest',
-      desc:'A Claude Code skill and installable plugin: find, evaluate and download real design, UI and motion references (images and video) from Pinterest, cut out subjects from their backgrounds, and hand them to the design skills that build the component.',
-      stack:['Python','Claude Code'],nav:['Search','Cutout','Handoff'],badge:'Published plugin',
-      headline:'Real references, <span class="pm-accent">into the build</span>.',
-      sub:'Source, evaluate, cut out, hand off — no generation.',
-      links:[{href:'https://github.com/Zuhair-01/open-pinterest',label:'Repo ↗',ext:true}]},
-    'clip-platform':{tag:'AI VIDEO SAAS',title:'clip-platform',
-      desc:'Turns long videos into short vertical clips: an attention-intelligence engine ranks moments, GPU-accelerated transcription runs with an NVENC fallback, and multi-speaker cutting keeps the right face on screen. FastAPI backend, Next.js front end. Private build — walkthrough on request.',
-      stack:['TypeScript','FastAPI','Whisper'],nav:['Rank','Transcribe','Cut'],badge:'Private — production build',
-      headline:'Long video in, <span class="pm-accent">the good 30 seconds</span> out.',
-      sub:'Attention ranking, GPU transcribe, multi-speaker cut.',
-      links:[{href:'#contact',label:'Ask for a walkthrough →'}]}
-  };
-  const modal=document.getElementById('project-modal');
-  const poster=document.getElementById('pm-poster');
-  const tag=document.getElementById('pm-tag'),ttl=document.getElementById('pm-title'),
-        desc=document.getElementById('pm-desc'),stack=document.getElementById('pm-stack'),
-        links=document.getElementById('pm-links');
-  function openProject(id){
-    const p=PROJECTS[id];if(!p)return;
-    tag.textContent=p.tag;ttl.textContent=p.title;desc.textContent=p.desc;
-    stack.innerHTML=p.stack.map(s=>`<span class="chip">${s}</span>`).join('');
-    links.innerHTML=p.links.map(l=>`<a class="mini-link" href="${l.href}"${l.ext?' target="_blank" rel="noopener"':''}>${l.label}</a>`).join('');
-    poster.innerHTML=`
-      <div class="pm-poster-bar">
-        <span class="pm-poster-dot"></span>
-        <span class="pm-poster-name">${p.title}</span>
-        <span class="pm-poster-nav">${p.nav.map(n=>`<span>${n}</span>`).join('')}</span>
-      </div>
-      <div class="pm-poster-body">
-        <span class="pm-poster-badge"><span class="dot"></span> ${p.badge}</span>
-        <h4>${p.headline}</h4>
-        <p>${p.sub}</p>
-      </div>`;
-    modal.hidden=false;document.body.style.overflow='hidden';
-  }
-  function close(){modal.hidden=true;document.body.style.overflow='';}
-  document.querySelectorAll('[data-project-trigger]').forEach(btn=>{
-    btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openProject(btn.dataset.projectTrigger);});
-  });
-  document.querySelectorAll('.sw-card[data-project]').forEach(card=>{
-    card.addEventListener('click',e=>{
-      if(e.target.closest('a,button'))return;
-      openProject(card.dataset.project);
-    });
-  });
-  modal.addEventListener('click',e=>{if(e.target.hasAttribute('data-close'))close();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close();});
-})();
-
-// animated counters
-document.querySelectorAll('.num[data-count]').forEach(el=>{
-  const target=+el.dataset.count,sfx=el.dataset.suffix||'';let t0=null;
-  const io2=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;io2.disconnect();
-    requestAnimationFrame(function step(t){if(!t0)t0=t;const p=Math.min((t-t0)/1100,1);
-      el.textContent=Math.round(target*(1-Math.pow(1-p,3)))+sfx;if(p<1)requestAnimationFrame(step);});
-  },{threshold:.5});io2.observe(el);
-});
-</script>
+<script src="site.js" defer></script>
 </body>
 </html>
