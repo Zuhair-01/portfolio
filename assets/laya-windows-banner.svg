@@ -1,0 +1,51 @@
+<svg width="1280" height="320" viewBox="0 0 1280 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="55%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="320" fill="url(#bg)"/>
+  <rect width="1280" height="320" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accent)"/>
+  <rect x="0" y="314" width="1280" height="6" fill="url(#accent)"/>
+
+  <!-- node/decision motif -->
+  <g stroke="url(#accent)" stroke-width="1.5" opacity="0.55">
+    <line x1="980" y1="90" x2="1120" y2="60"/>
+    <line x1="980" y1="90" x2="1120" y2="130"/>
+    <line x1="980" y1="90" x2="1120" y2="200"/>
+    <line x1="1120" y1="60" x2="1200" y2="90"/>
+    <line x1="1120" y1="130" x2="1200" y2="90"/>
+    <line x1="1120" y1="200" x2="1200" y2="90"/>
+  </g>
+  <g fill="#38bdf8">
+    <circle cx="980" cy="90" r="6"/>
+  </g>
+  <g fill="#a78bfa">
+    <circle cx="1120" cy="60" r="5"/>
+    <circle cx="1120" cy="130" r="5"/>
+    <circle cx="1120" cy="200" r="5"/>
+  </g>
+  <g fill="#f472b6">
+    <circle cx="1200" cy="90" r="7"/>
+  </g>
+
+  <text x="72" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="700" fill="#f8fafc">Laya <tspan fill="#38bdf8">Windows</tspan></text>
+  <text x="76" y="168" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="500" fill="#cbd5e1">Typed decisions · Arabic-first · ONNX + DirectML on any Windows GPU</text>
+  <text x="76" y="168" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="500" fill="#cbd5e1" dy="34">لايا وندوز — قرارات فورية بدون توليد نص، تعمل محليًا على ويندوز</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#94a3b8">
+    <text x="76" y="252">choice · score · noul</text>
+    <text x="76" y="278">zero hallucination · ~5ms/decision</text>
+  </g>
+</svg>

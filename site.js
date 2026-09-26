@@ -3,18 +3,19 @@
   var root = document.documentElement;
   root.classList.remove('no-js');
 
+  var I18N = window.SITE_I18N || {};
   var EMAIL = 'zoherwazz6@gmail.com';
   var WA = 'https://wa.me/963968304197?text=';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var MODES = {
     hire: {
-      href: 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Role inquiry for Zuhair'),
-      label: 'Email me about a role'
+      href: 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(I18N.subject || 'Role inquiry for Zuhair'),
+      label: I18N.hireLabel || 'Email me about a role'
     },
     build: {
-      href: WA + encodeURIComponent('Hi Zuhair, I have an idea I want built. Here is what I need: '),
-      label: 'Tell me your idea on WhatsApp'
+      href: WA + encodeURIComponent(I18N.waText || 'Hi Zuhair, I have an idea I want built. Here is what I need: '),
+      label: I18N.buildLabel || 'Tell me your idea on WhatsApp'
     }
   };
 
@@ -106,7 +107,7 @@
   var copy = document.querySelector('.copy');
   if (copy) {
     copy.addEventListener('click', function () {
-      var done = function () { copy.textContent = 'Copied'; setTimeout(function () { copy.textContent = EMAIL; }, 1600); };
+      var done = function () { copy.textContent = I18N.copied || 'Copied'; setTimeout(function () { copy.textContent = EMAIL; }, 1600); };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(EMAIL).then(done, function () {});
       else { var t = document.createElement('textarea'); t.value = EMAIL; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); done(); } catch (e) {} t.remove(); }
     });

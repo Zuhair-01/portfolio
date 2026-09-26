@@ -1,0 +1,24 @@
+@font-face{font-family:'Camel';src:url('assets/fonts/camel-regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Camel';src:url('assets/fonts/camel-medium.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Camel';src:url('assets/fonts/camel-extrabold.woff2') format('woff2');font-weight:800;font-display:swap}
+
+html[dir="rtl"]{
+  --display:'Camel','Segoe UI',Tahoma,sans-serif;
+  --body:'Camel','Segoe UI',Tahoma,sans-serif;
+  --mono:'Camel',ui-monospace,monospace;
+}
+html[dir="rtl"] body{font-feature-settings:"kern" 1}
+html[dir="rtl"] .eyebrow::before{margin-inline-end:0}
+html[dir="rtl"] .steps li{grid-template-columns:1fr 44px}
+html[dir="rtl"] .steps li::before{order:2}
+html[dir="rtl"] .facts div{grid-template-columns:1fr 110px}
+html[dir="rtl"] .facts dt{text-align:left}
+html[dir="rtl"] .who{flex-direction:row-reverse}
+html[dir="rtl"] .score-row:not(.score-head)::before{left:auto;right:0}
+html[dir="rtl"] .more svg,html[dir="rtl"] .btn svg{transform:scaleX(-1)}
+html[dir="rtl"] .marquee .track span::before{margin-inline-end:44px;margin-inline-start:0}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3{letter-spacing:0}
+html[dir="rtl"] .lede,html[dir="rtl"] .sub,html[dir="rtl"] p{letter-spacing:0}
+@media (max-width:620px){
+  html[dir="rtl"] body{font-size:16.5px}
+}
