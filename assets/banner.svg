@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Portfolio: browser window showing project case-study cards">
+  <rect width="1200" height="300" rx="16" fill="#0d1117"/>
+  <text x="56" y="92" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="52" font-weight="800" letter-spacing="-1" fill="#f0f6fc">Portfolio</text>
+  <text x="58" y="130" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#8b949e">Zuhair Alwazzour · AI Engineering · live projects · case studies · resume</text>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14">
+    <rect x="56" y="160" width="300" height="36" rx="18" fill="none" stroke="#58a6ff" stroke-width="2"/>
+    <text x="206" y="184" fill="#58a6ff" text-anchor="middle">zuhair-portfolio.vercel.app</text>
+    <text x="58" y="232" font-size="14" fill="#6e7681">static HTML · no build step · resume prints to PDF</text>
+  </g>
+  <g>
+    <rect x="560" y="36" width="584" height="228" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <circle cx="588" cy="58" r="5" fill="#ff5f57"/>
+    <circle cx="606" cy="58" r="5" fill="#febc2e"/>
+    <circle cx="624" cy="58" r="5" fill="#28c840"/>
+    <rect x="648" y="48" width="300" height="20" rx="10" fill="#0d1117"/>
+    <text x="660" y="62" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" fill="#8b949e">zuhair-portfolio.vercel.app</text>
+    <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+      <rect x="584" y="84" width="264" height="80" rx="8" fill="#0d1117" stroke="#30363d"/>
+      <rect x="584" y="84" width="264" height="26" rx="8" fill="#58a6ff" opacity="0.25"/>
+      <text x="598" y="102" font-size="14" font-weight="700" fill="#f0f6fc">Ostazi</text>
+      <text x="598" y="126" font-size="12" fill="#8b949e">tutoring marketplace · live</text>
+      <text x="598" y="148" font-size="12" fill="#58a6ff">case study →</text>
+      <rect x="860" y="84" width="264" height="80" rx="8" fill="#0d1117" stroke="#30363d"/>
+      <rect x="860" y="84" width="264" height="26" rx="8" fill="#58a6ff" opacity="0.25"/>
+      <text x="874" y="102" font-size="14" font-weight="700" fill="#f0f6fc">Kyros</text>
+      <text x="874" y="126" font-size="12" fill="#8b949e">GPU task dispatcher · 16/16</text>
+      <text x="874" y="148" font-size="12" fill="#58a6ff">case study →</text>
+      <rect x="584" y="172" width="264" height="80" rx="8" fill="#0d1117" stroke="#30363d"/>
+      <rect x="584" y="172" width="264" height="26" rx="8" fill="#58a6ff" opacity="0.25"/>
+      <text x="598" y="190" font-size="14" font-weight="700" fill="#f0f6fc">360 Skills</text>
+      <text x="598" y="214" font-size="12" fill="#8b949e">agent library · MIT</text>
+      <text x="598" y="236" font-size="12" fill="#58a6ff">case study →</text>
+      <rect x="860" y="172" width="264" height="80" rx="8" fill="#0d1117" stroke="#30363d"/>
+      <rect x="860" y="172" width="264" height="26" rx="8" fill="#58a6ff" opacity="0.25"/>
+      <text x="874" y="190" font-size="14" font-weight="700" fill="#f0f6fc">Nabd</text>
+      <text x="874" y="214" font-size="12" fill="#8b949e">sales intel · archived</text>
+      <text x="874" y="236" font-size="12" fill="#58a6ff">case study →</text>
+    </g>
+  </g>
+</svg>
