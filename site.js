@@ -4,7 +4,7 @@
   root.classList.remove('no-js');
 
   var I18N = window.SITE_I18N || {};
-  var EMAIL = 'zoherwazz6@gmail.com';
+  var EMAIL = 'axissummer@gmail.com';
   var WA = 'https://wa.me/963968304197?text=';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

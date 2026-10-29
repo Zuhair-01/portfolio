@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alwazour — Client Build Case Study | Zuhair</title>
+<meta name="description" content="How a Damascus technology-supply business went from no online presence to a live Arabic right-to-left storefront with a working inquiry flow, in a phased spec with a done condition per phase.">
+<link rel="canonical" href="https://zuhair-portfolio.vercel.app/projects/alwazour">
+<link rel="alternate" hreflang="en" href="https://zuhair-portfolio.vercel.app/projects/alwazour">
+<link rel="alternate" hreflang="ar" href="https://zuhair-portfolio.vercel.app/ar/projects/alwazour">
+<link rel="alternate" hreflang="x-default" href="https://zuhair-portfolio.vercel.app/projects/alwazour">
+<meta property="og:title" content="Alwazour — Client Build Case Study | Zuhair">
+<meta property="og:url" content="https://zuhair-portfolio.vercel.app/projects/alwazour">
+<meta property="og:description" content="A Damascus technology-supply business taken from no online presence to a live Arabic storefront with a working inquiry flow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="../case.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>Zuhair Alwazzour</span></a>
+  <nav class="navlinks" aria-label="Sections"><a href="../index.html#work">Work</a><a href="../index.html#services">Services</a><a href="../index.html#about">About</a><a href="../resume.html">Resume</a><a href="../index.html#contact">Contact</a></nav>
+  <a class="lang-btn" href="../ar/projects/alwazour.html" lang="ar">العربية</a>
+</div></header>
+
+<div class="wrap breadcrumb"><a href="../index.html">Work</a> / Alwazour</div>
+
+<header class="wrap case-hero">
+  <span class="eyebrow"><span class="dot"></span> Client build</span>
+  <h1>Alwazour</h1>
+  <p class="tagline">A Damascus technology-supply business, <span dir="rtl" lang="ar">الوزور التقني</span>, taken from no online presence to a live Arabic right-to-left storefront with a working product-inquiry flow. The owner runs it himself, every day. This is the build I show clients, because it is the one a client actually used.</p>
+  <div class="case-meta">
+    <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Arabic RTL</span><span class="chip">Client project</span><span class="chip">82 tests passing</span>
+  </div>
+  <div class="case-actions">
+    <a class="btn btn-primary" href="https://alwazour.vercel.app" target="_blank" rel="noopener">Visit the live site</a>
+    <a class="btn" href="https://github.com/Zuhair-01/alwazour" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</header>
+
+<section class="wrap case-section" style="border-top:none">
+  <h2><span class="num">01</span>Problem</h2>
+  <p>A real business with a real catalogue and no way to show it online. Phase 0 was a reality audit, and it was blunt: greenfield. No repository, no product data, no assets, no existing website, no analytics, no prior SEO. Every section of the original brief that said "audit the existing codebase" had nothing to audit.</p>
+  <p>The hard part was not the code. It was deciding, without the client available on demand, what the site was allowed to be, and building it so the owner could keep using it after I left.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">02</span>Approach: phases with a done condition</h2>
+  <p>The project ran as an approved master spec with numbered phases, and each phase carried its own completion condition. Phases 0 to 11 are covered: reality audit, infrastructure validation, business and market intelligence, brand DNA, data architecture, design exploration, design system, frontend foundation, product experience, solutions, and admin/operations.</p>
+  <p>Commercial and later phases were never started, and the spec says so rather than pretending otherwise. A plan that pretends to be finished is worth nothing to the person who has to run the site.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">03</span>Data before pixels</h2>
+  <p>The catalog was designed as data first: a product schema, a CSV import path, an admin database layer and a <code>resolveProductQuery</code> resolver, finished and visually verified before any page design was locked. It carried 47 tests at that point.</p>
+  <p>This ordering is why the search and filter on the live catalog work. Search was never a styling decision; it was a consequence of structuring the products properly the first time.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">04</span>Design: three directions, scored</h2>
+  <p>Phase 5 built three design directions, screenshotted both languages and both viewports, and scored them. Direction A won 31/35 and became the token set in <code>src/site/tokens.ts</code>. The first pass of that system read as flat, so the accent and shadow layers were reworked after direct feedback rather than defended.</p>
+  <p>Arabic was designed, not translated. The system uses a single font family and drops letter-spacing for Arabic, because the same tracking that makes Latin look good makes Arabic look broken.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">05</span>What actually works on the live site</h2>
+  <div class="case-two-col">
+    <div>
+      <p><strong style="color:var(--text)">Real catalog search.</strong> Client-side text search, category filtering, an empty state and URL-parameter preselect, all confirmed interactively in the browser rather than assumed from the code.</p>
+      <p><strong style="color:var(--text)">Solution pages that resolve.</strong> A solution page genuinely pulls matching products out of the catalog through the resolver, proven against real sample data, with 7 new tests covering it. Not hardcoded cards.</p>
+    </div>
+    <div>
+      <p><strong style="color:var(--text)">An admin the owner can run.</strong> Products CRUD, lead capture and analytics, plus spreadsheet import that extracts rows into human-reviewed candidates and confirms them through the normal product form. It was security-hardened and tested end to end, including a real browser upload.</p>
+      <p><strong style="color:var(--text)">A real inquiry path.</strong> The point of the site is that an enquiry reaches the owner. It is the flow the business runs on, which is why it is the flow I show clients.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">06</span>Verification, as it actually stands</h2>
+  <ul>
+    <li><strong>82 tests passing</strong> across five suites: search normalisation 14, CSV import 18, solution resolution 7, site build 21, measurement and lead handling 22.</li>
+    <li>One suite, <code>server/shipment-import.test.mjs</code>, currently <strong>fails to load</strong> on this machine.</li>
+    <li>Root cause, confirmed by reading the installed package: <code>package.json</code> pins SheetJS from the official CDN build (0.20.3), but the <code>node_modules</code> copy on disk is the old registry version 0.18.5, where <code>XLSX.set_cptable</code> no longer exists. The source is written against the pinned build.</li>
+    <li>Fix: reinstall dependencies from the pin (<code>npm ci</code>). I did not run it here because it downloads packages and the working tree carries uncommitted changes from an earlier session that are not mine to overwrite.</li>
+  </ul>
+  <div class="callout"><strong>Why I am writing this down:</strong> a portfolio that claims "all tests pass" is worth nothing the first time a client opens the repo. This is the real state, including the part that is not working.</div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">07</span>What is not done</h2>
+  <ul>
+    <li>Commercial flows are not built: B2B and project work, custom-cable orders and repair requests were never started.</li>
+    <li>Phases 12 to 18 of the spec are not started.</li>
+    <li>The Latin brand form is still a transliteration choice awaiting the owner's confirmation. The Arabic name is the one used on the site, and the Latin name is a decision, not a translation.</li>
+    <li>No public result numbers are claimed for this project. The owner uses the site daily, and that is a capability claim, not a measured result.</li>
+  </ul>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">08</span>What I took from it</h2>
+  <p>Data before pixels, and design decided by comparison instead of taste. And the handover question, which is the one that decides whether a client build succeeds: the site had to be usable by a shop owner who is not technical, in Arabic, on a phone, while updating products and reading inquiries. Everything else in this case study is downstream of that requirement.</p>
+</section>
+
+<footer class="case-footer"><div class="wrap">
+  <span>&copy; 2026 Zuhair Alwazzour. Damascus.</span>
+  <nav aria-label="More"><a href="../index.html#work">All projects</a><a href="../index.html#services">Services</a><a href="../index.html#contact">Contact</a><a href="../resume.html">Resume</a></nav>
+</div></footer>
+
+</body>
+</html>

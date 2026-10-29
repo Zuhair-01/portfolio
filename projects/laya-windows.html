@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Laya Windows — Case Study | Zuhair</title>
+<meta name="description" content="Laya Windows ports a typed-decision AI model off Apple-only Core ML onto ONNX Runtime and DirectML, so it runs on any Windows GPU with a first-class Arabic evaluation suite. Apache-2.0.">
+<link rel="canonical" href="https://zuhair-portfolio.vercel.app/projects/laya-windows">
+<link rel="alternate" hreflang="en" href="https://zuhair-portfolio.vercel.app/projects/laya-windows">
+<link rel="alternate" hreflang="ar" href="https://zuhair-portfolio.vercel.app/ar/projects/laya-windows">
+<link rel="alternate" hreflang="x-default" href="https://zuhair-portfolio.vercel.app/projects/laya-windows">
+<meta property="og:title" content="Laya Windows — Case Study | Zuhair">
+<meta property="og:url" content="https://zuhair-portfolio.vercel.app/projects/laya-windows">
+<meta property="og:description" content="A typed, non-generative decision engine ported off macOS-only Core ML onto ONNX Runtime and DirectML, with a first-class Arabic evaluation suite.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="../case.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>Zuhair Alwazzour</span></a>
+  <nav class="navlinks" aria-label="Sections"><a href="../index.html#work">Work</a><a href="../index.html#services">Services</a><a href="../index.html#about">About</a><a href="../resume.html">Resume</a><a href="../index.html#contact">Contact</a></nav>
+  <a class="lang-btn" href="../ar/projects/laya-windows.html" lang="ar">العربية</a>
+</div></header>
+
+<div class="wrap breadcrumb"><a href="../index.html">Work</a> / Laya Windows</div>
+
+<header class="wrap case-hero">
+  <span class="eyebrow"><span class="dot"></span> Model port and open source</span>
+  <h1>Laya Windows</h1>
+  <p class="tagline">The open-source, self-hosted decision engine for Windows. Typed, non-generative AI decisions — <code>choice</code>, <code>score</code>, <code>noul</code> — in a single forward pass, with calibrated probabilities and zero hallucination risk, ported off macOS-only Core ML onto ONNX Runtime and DirectML.</p>
+  <div class="case-meta">
+    <span class="chip">Python</span><span class="chip">ONNX Runtime</span><span class="chip">DirectML</span><span class="chip">Apache-2.0</span><span class="chip">Arabic + 10 languages</span>
+  </div>
+  <div class="case-actions">
+    <a class="btn btn-primary" href="https://github.com/Zuhair-01/laya-windows" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</header>
+
+<section class="wrap case-section" style="border-top:none">
+  <h2><span class="num">01</span>Why this exists</h2>
+  <p>The original Laya port for Apple Silicon runs on the Neural Engine, which means macOS only. Most of the world, and most of my own stack, runs Windows. So the same idea was ported onto ONNX Runtime and DirectML, Microsoft's cross-vendor GPU inference stack, where it runs on any DirectX 12 GPU: NVIDIA, AMD, Intel, integrated, with no CUDA requirement.</p>
+  <p>It also ships a first-class Arabic demo and evaluation suite that the original project does not have.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">02</span>What the model actually does</h2>
+  <p>Laya evaluates typed questions — <code>choice</code>, <code>score</code>, <code>noul</code> — over text or JSON state in a single forward pass. There is no autoregressive decoding and nothing to parse. You get calibrated probabilities back, not a wall of generated text.</p>
+  <p>That is the point of the whole project. A decision system that cannot hallucinate is a different kind of component than a chatbot: it can sit in a pipeline where a wrong sentence would be expensive, because it can only return a typed answer with a probability attached.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">03</span>The port</h2>
+  <pre class="code-block">source model      -> Laya typed-decision model (open weights)
+Core ML path     -> macOS / Apple Silicon only, Neural Engine
+this port        -> ONNX Runtime + DirectML, any DX12 GPU on Windows 10/11
+
+export   onnx_export.py   model -> ONNX
+package  quantize.py      optional weight quantisation
+run      laya_windows/    DirectML execution path
+verify   bench/eval_set.json + bench/run_eval.py   evaluation set
+docs     docs/results.json  measured outputs</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">04</span>Engineering decisions</h2>
+  <div class="case-two-col">
+    <div>
+      <p><strong style="color:var(--text)">DirectML, not CUDA.</strong> Targeting the widest possible GPU base mattered more than squeezing the last percent out of NVIDIA hardware. A decision engine that runs on the machine in front of you is worth more than one that runs 20 percent faster on a card most people do not own.</p>
+    </div>
+    <div>
+      <p><strong style="color:var(--text)">An evaluation set in the repo.</strong> The Arabic suite and the measured results are part of the project, not a separate paper. A port without an evaluation set is just a claim that it still works.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">05</span>Open source, in ten languages</h2>
+  <p>The repository is Apache-2.0 and open-weight, with documentation in Arabic, Chinese, Spanish, Portuguese, Hindi, Russian, Japanese, German, French and Korean, plus a continuous integration workflow and a contributor guide. The Arabic README is the primary one, not an afterthought translation.</p>
+  <p>Translation was treated as part of the port rather than a follow-up task, because the users this port exists for are not on the Apple platform.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">06</span>Limitations</h2>
+  <ul>
+    <li>It is a decision engine, not a text model. It will not write your email. If you need generation, this is the wrong tool.</li>
+    <li>Typed decisions need typed inputs. Free-form text has to be structured first.</li>
+    <li>Quantised variants trade a small amount of calibration accuracy for memory, and the exact trade-off depends on the model and the hardware.</li>
+  </ul>
+</section>
+
+<footer class="case-footer"><div class="wrap">
+  <span>&copy; 2026 Zuhair Alwazzour. Damascus.</span>
+  <nav aria-label="More"><a href="../index.html#work">All projects</a><a href="../index.html#services">Services</a><a href="../index.html#contact">Contact</a><a href="../resume.html">Resume</a></nav>
+</div></footer>
+
+</body>
+</html>

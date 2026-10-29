@@ -1,0 +1,17 @@
+<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FreshExpiry">
+  <defs>
+    <radialGradient id="feglow" cx="16%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#f4a261" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0e17" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="220" rx="20" fill="#0a0e17"/>
+  <rect width="900" height="220" rx="20" fill="url(#feglow)"/>
+  <g transform="translate(104,58)" fill="none" stroke-width="3">
+    <circle cx="36" cy="36" r="34" stroke="#f4a261"/>
+    <path d="M36 14v22l14 10" stroke="#f8fafc" stroke-linecap="round"/>
+    <path d="M24 78l-10 12M48 78l10 12" stroke="#3ddc97" stroke-linecap="round"/>
+  </g>
+  <text x="222" y="100" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#f8fafc">FreshExpiry</text>
+  <text x="224" y="132" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#f4a261" opacity="0.9">A shipped web app · expiry tracking deployed and reachable</text>
+</svg>

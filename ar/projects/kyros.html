@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kyros | دراسة حالة — زهير الوزّور</title>
+<link rel="canonical" href="https://zuhair-portfolio.vercel.app/ar/projects/kyros">
+<link rel="alternate" hreflang="en" href="https://zuhair-portfolio.vercel.app/projects/kyros">
+<link rel="alternate" hreflang="ar" href="https://zuhair-portfolio.vercel.app/ar/projects/kyros">
+<link rel="alternate" hreflang="x-default" href="https://zuhair-portfolio.vercel.app/projects/kyros">
+<meta property="og:title" content="Kyros | دراسة حالة — زهير الوزّور">
+<meta property="og:url" content="https://zuhair-portfolio.vercel.app/ar/projects/kyros">
+<meta name="description" content="Kyros: موزّع مهام ذكاء اصطناعي حتمي وقفل آمن لـ GPU واحد. بلا نموذج لغوي في حلقة القرار، بلا اعتماديات، و16 من 16 اختبارًا ناجحًا.">
+<link rel="stylesheet" href="../../site.css">
+<link rel="stylesheet" href="../../site-ar.css">
+<link rel="stylesheet" href="../../case.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>زهير الوزّور</span></a>
+  <nav class="navlinks" aria-label="أقسام"><a href="../index.html#work">الأعمال</a><a href="../index.html#services">الخدمات</a><a href="../index.html#about">نبذة</a><a href="../resume.html">السيرة الذاتية</a><a href="../index.html#contact">تواصل</a></nav>
+  <a class="lang-btn" href="../../projects/kyros.html" lang="en">English</a>
+</div></header>
+<main>
+<div class="wrap breadcrumb"><a href="../index.html#work">الأعمال</a> / Kyros</div>
+<header class="wrap case-hero">
+  <p class="eyebrow">تنسيق أدوات الذكاء الاصطناعي</p>
+  <h1>Kyros</h1>
+  <p class="tagline">الموزّع الذي يقرّر أي نموذج ذكاء اصطناعي يُسمح له بال مهمّة، والقفل الذي يمنع بطاقة GPU واحدة من أن تتحول إلى عنق زجاجة عندما يحاول أكثر من نموذج في الوقت نفسه. كل قرار يأتي مع سببه في سطر واحد، بلا صندوق أسود في الحلقة.</p>
+  <div class="case-meta"><span class="chip">Python 3.11+</span><span class="chip">بلا اعتماديات</span><span class="chip">MIT</span><span class="chip">16/16 اختبارًا</span></div>
+  <div class="case-actions"><a class="btn" href="https://github.com/Zuhair-01/kyros" target="_blank" rel="noopener">شاهد المستودع <span aria-hidden="true">↗</span></a></div>
+</header>
+<section class="wrap case-section"><h2><span class="num">01</span>المشكلة</h2><p>ترسل كل مهمة إلى أكبر نموذج فتهدر ميزانية على أعمال كان نموذج رخيص قادرًا عليها. وترسل كل شيء إلى الأرخص فتنتج إخفاقات صامتة في المواضع التي تحتاج حكمًا حقيقيًا: المصادقة، والمال، والترحيلات.</p><p>وإلى جانب ذلك: إذا حاول أكثر من عملية ذكاء اصطناعي محلية تحميل نفسها على بطاقة GPU واحدة في الوقت نفسه، تنهار إحداها أو تتراجع إلى ذاكرة النظام فتصبح بطيئة لدرجة لا تُستعمل. وقد يترك عملية ماتت أثناء التنفيذ ملف قفل إلى الأبد إذا لم يتحقق أحد من أن مالك القفل ما زال حيًا.</p></section>
+<section class="wrap case-section"><h2><span class="num">02</span>الحل</h2><p>يصنّف <code dir="ltr">kyros.router</code> المهمة حسب الحجم والمخاطر وما إذا كان هناك نمط قائم يمكن محاكاته، ثم يعيد مستوى: نموذج محلي رخيص، أو سحابي منخفض التكلفة، أو سحابي متوسط، أو سحابي متقدم، أو قرار <strong>احتفاظ</strong>، أي أن المهمة تحتاج حكمًا بشريًا أو من خبير ولا يجوز تنفيذها آليًا.</p><p>ويتتبع <code dir="ltr">kyros.escalation</code> سجل الإخفاقات لكل مهمة، فيتوقف إعادة إرسال مهمة فشل فيها نموذج مرتين بدل أن يدور في حلقة. أما <code dir="ltr">kyros.gpu_lock</code> فهو قفل ملفات يعتمد على رقم العملية، يمنح وصولًا حصريًا لـ GPU لعملية واحدة في الوقت، ويزيل تلقائيًا أي قفل تركته عملية لم تعد حيّة.</p></section>
+<section class="wrap case-section"><h2><span class="num">03</span>البنية</h2><p>المهمة (نوع العمل، حجم الناتج، الملفات المتأثرة، وسوم المخاطر، حجم السياق) تمر عبر <code dir="ltr">router.route()</code>، فتُمنع أي مهمة تحمل وسوم المصادقة أو المال أو الترحيل أو التوازي أو الأمن تلقائيًا مهما كان حجمها. وبعد ذلك يتولى <code dir="ltr">escalation</code> سجل الفشل، بينما يعمل <code dir="ltr">gpu_lock</code> مستقلًا مع أي عملية تحمل نموذجًا فعلًا.</p></section>
+<section class="wrap case-section"><h2><span class="num">04</span>قرارات هندسية</h2><p>لا نموذج لغوي في حلقة القرار. سياسة التوجيه دالة خالصة على بيانات المهمة، فالمهمة نفسها تتجه دائمًا إلى المسار نفسه، وكل حد فيها مُختبَر. نموذج يقرّر أي نموذج يُستعمل هو عطل مؤجّل.</p><p>المخاطر تسبق الحجم، فمهام المصادقة والمال والترحيل والتوازي والأمن تُحتفظ دائمًا بأعلى مستوى. وقفل GPU يتحقق من حيّة العملية من قائمة العمليات الحقيقية في نظام التشغيل، لا من وجود الملف فقط، فلا يبقى عالقًا أثر انهيار. والحزمة كلها من المكتبة القياسية في Python: بلا اعتماديات، وبلا نداءات شبكة، وبلا مفاتيح.</p></section>
+<section class="wrap case-section"><h2><span class="num">05</span>ليس محاكاة</h2><p>الملف <code dir="ltr">gpu_lock.py</code> هو نفسه أداة التنسيق المستخدمة في الإنتاج اليوم عبر أحمال ذكاء اصطناعي محلية متزامنة تتشارك بطاقة واحدة سعة 8 غيغابايت: خط معالجة فيديو، ونموذج محلي، ونموذج رؤية. ولا يُسمح لأي منها بالتحميل قبل أن تحصل على هذا القفل. أما سياسة التوجيه موثقة في <code dir="ltr">docs/routing-policy.md</code>، وكل حد فيها مربوط بحالة فشل حقيقية.</p></section>
+<section class="wrap case-section"><h2><span class="num">06</span>التحقق والحدود</h2><p>16 من 16 اختبارًا ناجحًا، أُعيد تشغيلها محليًا في 2026-10-29 عبر <code dir="ltr">python -m pytest -q</code> في 4.74 ثانية، وتغطي كل فروع التوجيه وقاعدة الإيقاف بعد إفلاسين، وخمس حالات تعارض وانهيار في قفل GPU.</p><p>الحدود: بيانات المهمة يوفّرها المستدعي، فالنظام يوجّه ما يُقال له ولا يقرأ المستودع بنفسه. وعتبات الذاكرة تقديرية وتتعلق بالعتاد. وأسماء المستويات تفترض سلّم مزود سحابي، فتغييره يعني تعديل السياسة والاختبارات معه.</p></section>
+</main>
+<footer class="case-footer"><div class="wrap"><span>&copy; 2026 زهير الوزّور. دمشق.</span><nav aria-label="المزيد"><a href="../index.html#work">كل المشاريع</a><a href="../index.html#services">الخدمات</a><a href="../index.html#contact">تواصل</a><a href="../resume.html">السيرة الذاتية</a></nav></div></footer>
+</body>
+</html>

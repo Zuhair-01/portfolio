@@ -1,14 +1,16 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const base = 'https://zuhair-portfolio.vercel.app';
-const slugs = [
-  'ai-contract-intelligence', 'ai-security-log-analyzer',
-  'enterprise-ai-assistant', 'enterprise-bi-platform', 'open-axis', 'ostazi',
-];
+// Derived from the files on disk so a new case study cannot silently skip the checks.
+const slugs = readdirSync(join(root, 'projects'))
+  .filter((file) => file.endsWith('.html'))
+  .map((file) => file.replace(/\.html$/, ''))
+  .filter((slug) => existsSync(join(root, 'ar', 'projects', `${slug}.html`)));
+assert.ok(slugs.length > 0, 'no case studies found');
 const pairs = [['index.html', 'ar/index.html', '/', '/ar'], ['resume.html', 'ar/resume.html', '/resume', '/ar/resume']];
 for (const slug of slugs) pairs.push([`projects/${slug}.html`, `ar/projects/${slug}.html`, `/projects/${slug}`, `/ar/projects/${slug}`]);
 

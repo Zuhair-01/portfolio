@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laya Windows | دراسة حالة — زهير الوزّور</title>
+<link rel="canonical" href="https://zuhair-portfolio.vercel.app/ar/projects/laya-windows">
+<link rel="alternate" hreflang="en" href="https://zuhair-portfolio.vercel.app/projects/laya-windows">
+<link rel="alternate" hreflang="ar" href="https://zuhair-portfolio.vercel.app/ar/projects/laya-windows">
+<link rel="alternate" hreflang="x-default" href="https://zuhair-portfolio.vercel.app/projects/laya-windows">
+<meta property="og:title" content="Laya Windows | دراسة حالة — زهير الوزّور">
+<meta property="og:url" content="https://zuhair-portfolio.vercel.app/ar/projects/laya-windows">
+<meta name="description" content="Laya Windows: نقل نموذج قرارات مُصنَّف من Core ML الحصري على Apple إلى ONNX Runtime وDirectML، ليعمل على أي بطاقة رسوميات في ويندوز، مع مجموعة تقييم عربية كاملة. رخصة Apache-2.0.">
+<link rel="stylesheet" href="../../site.css">
+<link rel="stylesheet" href="../../site-ar.css">
+<link rel="stylesheet" href="../../case.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>زهير الوزّور</span></a>
+  <nav class="navlinks" aria-label="أقسام"><a href="../index.html#work">الأعمال</a><a href="../index.html#services">الخدمات</a><a href="../index.html#about">نبذة</a><a href="../resume.html">السيرة الذاتية</a><a href="../index.html#contact">تواصل</a></nav>
+  <a class="lang-btn" href="../../projects/laya-windows.html" lang="en">English</a>
+</div></header>
+<main>
+<div class="wrap breadcrumb"><a href="../index.html#work">الأعمال</a> / Laya Windows</div>
+<header class="wrap case-hero">
+  <p class="eyebrow">نقل نموذج مفتوح المصدر</p>
+  <h1>Laya Windows</h1>
+  <p class="tagline">محرّك قرارات مفتوح المصدر يعمل ذاتيًا على ويندوز. قرارات ذكاء اصطناعي مُصنَّفة وغير توليدية — <code dir="ltr">choice</code> و<code dir="ltr">score</code> و<code dir="ltr">noul</code> — في تمريرة أمامية واحدة، باحتمالات معايَرة وصفر خطر هلوسة، منقولة من Core ML الحصري على macOS إلى ONNX Runtime وDirectML.</p>
+  <div class="case-meta"><span class="chip">Python</span><span class="chip">ONNX Runtime</span><span class="chip">DirectML</span><span class="chip">Apache-2.0</span><span class="chip">عربية + 10 لغات</span></div>
+  <div class="case-actions"><a class="btn" href="https://github.com/Zuhair-01/laya-windows" target="_blank" rel="noopener">شاهد المستودع <span aria-hidden="true">↗</span></a></div>
+</header>
+<section class="wrap case-section"><h2><span class="num">01</span>لماذا هذا المشروع</h2><p>المنفذ الأصلي لنموذج Laya على معالج Apple Neural Engine يعمل على macOS فقط. وأغلب العالم، ومعظم أعمدة عملي، تعمل على ويندوز. لذلك نُقلت الفكرة نفسها إلى ONNX Runtime وDirectML، وهي حزمة استدلال من مايكروسوفت تعمل على أي بطاقة تدعم DirectX 12: من NVIDIA وAMD وIntel والبطاقات المدمجة، دون أي متطلب CUDA. ومعها عرض تجريبي ومجموعة تقييم عربية متكاملة لا يوفرها المشروع الأصلي.</p></section>
+<section class="wrap case-section"><h2><span class="num">02</span>ما يفعله النموذج</h2><p>يقيّم Laya أسئلة مُصنَّفة — <code dir="ltr">choice</code> و<code dir="ltr">score</code> و<code dir="ltr">noul</code> — على نص أو حالة JSON في تمريرة أمامية واحدة. لا فك ترميز ذاتي، ولا شيء يحتاج تحليلًا. تحصل على احتمالات معايَرة، لا على جدار من النص المولَّد.</p><p>وهذه هي الفكرة كلها: نظام قرارات لا يهلوس نوعًا مختلفًا من المكوّن، يمكن وضعه في مسار تكون فيه الجملة الخاطئة مكلفة، لأنه لا يستطيع إلا أن يعيد إجابة مُصنَّفة مع احتمال مرفق بها.</p></section>
+<section class="wrap case-section"><h2><span class="num">03</span>مسار النقل</h2><p>النموذج مفتوح الأوزان. مسار Core ML كان حصريًا على macOS وApple Silicon. هذا النقل يضع التنفيذ على DirectML فوق أي بطاقة DX12 في ويندوز 10 و11. ومعه سكربت تصدير إلى ONNX، وأداة تكميم اختيارية للأوزان، ومجلد <code dir="ltr">bench</code> يحتوي مجموعة التقييم وسكربت تشغيلها، ونتائج التقييم المحفوظة في <code dir="ltr">docs/results.json</code>.</p></section>
+<section class="wrap case-section"><h2><span class="num">04</span>قرارات هندسية</h2><p>استُخدم DirectML بدل CUDA لأن توسيع قاعدة الأجهزة أهم من كسب آخر نسبة مئوية على عتاد NVIDIA. فمحرّك قرارات يعمل على الجهاز الموجود أمامك يساوي أكثر من محرّك أسرع بنسبة عشرين بالمئة على بطاقة لا يملكها most الناس.</p><p>ومجموعة التقييم العربية موجودة داخل المستودع وليست ورقة منفصلة. النقل بلا مجموعة تقييم ليس سوى ادعاء بأن ما زال يعمل. أما الترجمة فمُنيت كجزء من النقل لا كمهمة لاحقة، لأن من يجعل هذا النقل موجودًا ليسوا على منصة Apple.</p></section>
+<section class="wrap case-section"><h2><span class="num">05</span>مفتوح المصدر بعشر لغات</h2><p>المستودع برخصة Apache-2.0 وبأوزان مفتوحة، وتوثيقه بالعربية والصينية والإسبانية والبرتغالية والهندية والروسية واليابانية والألمانية والفرنسية والكورية، مع مسار تكامل مستمر ودليل مساهمين. والشرح العربي هو الأساسي، لا ترجمة لاحقة.</p></section>
+<section class="wrap case-section"><h2><span class="num">06</span>الحدود</h2><p>هذا محرّك قرارات لا نموذج نصوص: لن يكتب لك بريدًا إلكترونيًا، ومن يحتاج توليدًا فهذه ليست الأداة المناسبة. كما أن القرارات المُصنَّفة تحتاج مدخلات مُصنَّفة، فالنص الحر يجب هكلته أولًا. والنسخ المكمَّم يبدل جزءًا صغيرًا من دقة المعايرة企业提供 الذاكرة، وحجم هذا التبادل يعتمد على النموذج والعتاد.</p></section>
+</main>
+<footer class="case-footer"><div class="wrap"><span>&copy; 2026 زهير الوزّور. دمشق.</span><nav aria-label="المزيد"><a href="../index.html#work">كل المشاريع</a><a href="../index.html#services">الخدمات</a><a href="../index.html#contact">تواصل</a><a href="../resume.html">السيرة الذاتية</a></nav></div></footer>
+</body>
+</html>

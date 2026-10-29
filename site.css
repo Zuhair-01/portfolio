@@ -320,3 +320,28 @@ footer .social-links .footer-resume:hover,footer .social-links .footer-resume:fo
   .reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+
+/* --- Services: the freelance offer (2026-10-29) --- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.svc{border:1px solid var(--line);border-radius:24px;background:var(--surface);padding:30px;display:flex;flex-direction:column;gap:14px}
+.svc.featured{border-color:var(--accent);background:linear-gradient(165deg,var(--accent-soft),var(--surface) 55%)}
+.svc h3{font-family:var(--display);font-size:24px;letter-spacing:-.02em;line-height:1.2}
+.svc .price{font-family:var(--display);font-size:29px;letter-spacing:-.02em;color:var(--accent);line-height:1.1}
+.svc .price small{display:block;font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:7px}
+.svc ul{list-style:none;display:grid;gap:9px}
+.svc li{position:relative;padding-inline-start:19px;color:#c3c0b8;font-size:15px;line-height:1.6}
+.svc li::before{content:"";position:absolute;inset-inline-start:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.svc .note{font-size:14px;color:var(--muted);line-height:1.6}
+.svc .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
+
+/* --- Timeline: the dated legacy record (2026-10-29) --- */
+.tl{list-style:none;margin-top:40px;position:relative}
+.tl::before{content:"";position:absolute;inset-inline-start:4px;top:9px;bottom:9px;width:1px;background:var(--line)}
+.tl li{position:relative;padding-inline-start:34px;padding-block-end:30px}
+.tl li:last-child{padding-block-end:0}
+.tl li::before{content:"";position:absolute;inset-inline-start:0;top:6px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--surface)}
+.tl .when{font-family:var(--mono);font-size:12.5px;color:var(--accent);letter-spacing:.05em}
+.tl h4{font-family:var(--display);font-size:19px;margin:6px 0 5px;letter-spacing:-.01em}
+.tl p{color:#bdbab2;font-size:15px;margin:0;max-width:62ch}
+.tl .src{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:6px}
+@media (max-width:980px){.svc-grid{grid-template-columns:1fr}}

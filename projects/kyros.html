@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kyros — Case Study | Zuhair</title>
+<meta name="description" content="Kyros is a deterministic AI task-routing dispatcher plus a crash-safe shared-GPU mutex. No LLM in the decision loop, zero dependencies, 16/16 tests passing.">
+<link rel="canonical" href="https://zuhair-portfolio.vercel.app/projects/kyros">
+<link rel="alternate" hreflang="en" href="https://zuhair-portfolio.vercel.app/projects/kyros">
+<link rel="alternate" hreflang="ar" href="https://zuhair-portfolio.vercel.app/ar/projects/kyros">
+<link rel="alternate" hreflang="x-default" href="https://zuhair-portfolio.vercel.app/projects/kyros">
+<meta property="og:title" content="Kyros — Case Study | Zuhair">
+<meta property="og:url" content="https://zuhair-portfolio.vercel.app/projects/kyros">
+<meta property="og:description" content="The dispatcher that decides which AI model is allowed to touch a task, and the mutex that keeps one GPU from becoming a bottleneck. Deterministic, zero dependencies, 16/16 tests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="../case.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../index.html"><i></i><span>Zuhair Alwazzour</span></a>
+  <nav class="navlinks" aria-label="Sections"><a href="../index.html#work">Work</a><a href="../index.html#services">Services</a><a href="../index.html#about">About</a><a href="../resume.html">Resume</a><a href="../index.html#contact">Contact</a></nav>
+  <a class="lang-btn" href="../ar/projects/kyros.html" lang="ar">العربية</a>
+</div></header>
+
+<div class="wrap breadcrumb"><a href="../index.html">Work</a> / Kyros</div>
+
+<header class="wrap case-hero">
+  <span class="eyebrow"><span class="dot"></span> AI orchestration</span>
+  <h1>Kyros</h1>
+  <p class="tagline">The dispatcher that decides which AI model is allowed to touch a task, and the mutex that stops your GPU from becoming the bottleneck when more than one of them tries. Every decision comes with its reason attached, in one line, with no black box in the loop.</p>
+  <div class="case-meta">
+    <span class="chip">Python 3.11+</span><span class="chip">Zero dependencies</span><span class="chip">MIT</span><span class="chip">16/16 tests</span>
+  </div>
+  <div class="case-actions">
+    <a class="btn btn-primary" href="https://github.com/Zuhair-01/kyros" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</header>
+
+<section class="wrap case-section" style="border-top:none">
+  <h2><span class="num">01</span>Problem</h2>
+  <p>Send every task to the biggest model and you burn budget on work a cheap model could have handled. Send everything to the cheapest model and you get silent failures exactly where judgment mattered most: auth, money, migrations.</p>
+  <p>And separately: if more than one local AI process tries to load onto a single consumer GPU at once, one of them crashes or degrades to system RAM and becomes unusably slow. A process that dies mid-run can also leave a lock file behind forever if nothing checks whether the holder is still alive.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">02</span>Solution</h2>
+  <p><code>kyros.router</code> classifies a task by size, risk and whether an existing pattern exists to imitate, then returns a tier: cheap local model, low-cost cloud, mid-tier cloud, frontier cloud, or <em>retain</em>, a signal that the task needs human or senior judgment and should not be dispatched at all.</p>
+  <p><code>kyros.escalation</code> tracks per-task failure history, so a model that fails twice on the same task stops being retried automatically instead of looping. <code>kyros.gpu_lock</code> is a file-based mutex keyed by PID that grants exclusive GPU access to one process at a time and auto-clears a lock left by a process that has since died.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">03</span>Architecture</h2>
+  <pre class="code-block">Task (concern, output size, files touched, risk tags, context size)
+        |
+        v
+kyros.router.route()
+  - high-risk tags (auth/money/migration/concurrency/security) -> RETAIN, always
+  - cross-file diff too small to verify mechanically           -> RETAIN
+  - bulky + single-file + pattern exists + fits local context  -> LOCAL
+  - small + fully-specified                                    -> CLOUD_LOW
+  - standard feature-sized                                     -> CLOUD_MEDIUM
+  - large / unbounded scope                                    -> CLOUD_HIGH
+        |
+        v
+kyros.escalation.EscalationLadder
+  - records pass/fail per task id
+  - 2 failures on one task -> should_retain() flips true, stop re-dispatching
+
+kyros.gpu_lock.GPULock  (independent, used by whichever process loads a model)
+  - acquire(owner, pid): refused if held, or if free VRAM < threshold
+  - a lock whose owning pid is no longer a live process is cleared automatically
+  - release(pid): only the holder's own pid may release</pre>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">04</span>Technical decisions</h2>
+  <div class="case-two-col">
+    <div>
+      <p><strong style="color:var(--text)">No LLM in the decision loop.</strong> The routing policy is a pure function over task metadata, so the same task always routes the same way and every cutoff is unit-tested. A model that decides which model to use is a failure waiting to happen.</p>
+      <p><strong style="color:var(--text)">Risk overrides size.</strong> Auth, money, migrations, concurrency and security-tagged tasks are always retained at the highest tier regardless of size, closing the failure mode where a cheap model quietly gets handed something expensive to get wrong.</p>
+    </div>
+    <div>
+      <p><strong style="color:var(--text)">Crash safety from the OS, not from a file.</strong> Lock liveness is checked against the real process list, not just the presence of a lock file, so a crashed holder cannot permanently starve every other process of the GPU.</p>
+      <p><strong style="color:var(--text)">Zero dependencies on purpose.</strong> The whole package is Python standard library. No network calls, no API keys, nothing to configure before the test suite runs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">05</span>Not a simulation</h2>
+  <p><code>gpu_lock.py</code> is the same coordination primitive running in production today across concurrent local-AI workloads that share one 8 GB GPU: a video-clipping pipeline, a local LLM and a vision model all draw from the same card, and none of them may load without acquiring this lock first.</p>
+  <p>The routing policy is documented separately in <code>docs/routing-policy.md</code>, with each cutoff tied to the failure case it exists to prevent.</p>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">06</span>Verification</h2>
+  <ul>
+    <li><strong>16/16 tests passing</strong>, re-run locally on 2026-10-29 with <code>python -m pytest -q</code> (4.74 s), covering every routing branch, the two-strike escalation rule, and five GPU-mutex crash and contention scenarios.</li>
+    <li>Every routing cutoff is unit-tested against a real failure case, not against the happy path.</li>
+    <li>Licence MIT. The package is pure standard library, so the test suite runs on a clean machine with nothing installed.</li>
+  </ul>
+  <div class="callout"><strong>Verified, not claimed:</strong> the 16 tests were executed on 2026-10-29 for this case study, not copied from an earlier note.</div>
+</section>
+
+<section class="wrap case-section">
+  <h2><span class="num">07</span>Limitations</h2>
+  <ul>
+    <li>Task metadata is supplied by the caller. Kyros routes what it is told about; it does not read the repository to discover scope.</li>
+    <li>VRAM thresholds are heuristic and hardware-dependent; the mutex serialises access, it does not schedule across GPUs.</li>
+    <li>The tier names assume a cloud-provider ladder. Adapting them to a different provider set means editing the policy document and the tests with it.</li>
+  </ul>
+</section>
+
+<footer class="case-footer"><div class="wrap">
+  <span>&copy; 2026 Zuhair Alwazzour. Damascus.</span>
+  <nav aria-label="More"><a href="../index.html#work">All projects</a><a href="../index.html#services">Services</a><a href="../index.html#contact">Contact</a><a href="../resume.html">Resume</a></nav>
+</div></footer>
+
+</body>
+</html>

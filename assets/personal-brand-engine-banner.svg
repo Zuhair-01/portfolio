@@ -1,0 +1,18 @@
+<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Personal Brand Engine">
+  <defs>
+    <radialGradient id="pbglow" cx="16%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#4f7cff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0e17" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="220" rx="20" fill="#0a0e17"/>
+  <rect width="900" height="220" rx="20" fill="url(#pbglow)"/>
+  <g transform="translate(100,56)">
+    <rect x="0" y="0" width="200" height="98" rx="10" fill="none" stroke="#4f7cff" stroke-width="3"/>
+    <path d="M18 30h164M18 52h120M18 74h96" stroke="#f8fafc" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="170" cy="76" r="13" fill="#3ddc97" opacity="0.9"/>
+    <path d="M165 76l4 4 7-8" fill="none" stroke="#0a0e17" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="340" y="100" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#f8fafc">personal-brand-engine</text>
+  <text x="342" y="132" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#4f7cff" opacity="0.9">Drafts posts from finished work · review then approve · never auto-publishes</text>
+</svg>
